@@ -1,0 +1,276 @@
+---
+title: "Compara Radios"
+author: "Daniel Rodriguez"
+date: "4/12/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##Cargamos los paquetes necesarios
+
+```{r cars}
+rm(list=ls()) 
+setwd("~")
+```
+
+
+```{r pressure, echo=FALSE}
+library(ggplot2)
+library(tidyverse)
+library(dplyr)
+library(lattice)
+library(C50)
+library(caret)
+library(gmodels)
+library(irr)
+library(psych)
+library(kknn)
+library(randomForest)
+library(e1071)
+library(caTools)
+library(mlbench)
+library(ranger)
+library(ROCR)
+library(pROC)
+library(kknn)
+library(ada)
+library(rpart)
+library(MASS)
+library(class)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r pressure, echo=FALSE}
+setwd("/Users/daniel.rodriguez/Documents/ACC/ACC_PROOF/ACC1/final_datasets")
+
+train50 <- read.csv("train50_fin.csv", sep = ",")
+train100 <- read.csv("train100_fin.csv", sep = ",")
+train200 <- read.csv("train200_fin.csv", sep = ",")
+train300 <- read.csv("train300_fin.csv", sep = ",")
+train500 <- read.csv("train500_fin.csv", sep = ",")
+```
+
+
+```{r pressure, echo=FALSE}
+setwd("/Users/daniel.rodriguez/Documents/ACC/ACC_PROOF/ACC1/final_datasets")
+
+train50 <- read.csv("train50_fin.csv", sep = ",")
+train100 <- read.csv("train100_fin.csv", sep = ",")
+train200 <- read.csv("train200_fin.csv", sep = ",")
+train300 <- read.csv("train300_fin.csv", sep = ",")
+train500 <- read.csv("train500_fin.csv", sep = ",")
+```
+
+
+```{r pressure, echo=FALSE}
+setwd("/Users/daniel.rodriguez/Documents/ACC/ACC_PROOF/ACC1/final_datasets")
+
+train50 <- read.csv("train50_fin.csv", sep = ",")
+train100 <- read.csv("train100_fin.csv", sep = ",")
+train200 <- read.csv("train200_fin.csv", sep = ",")
+train300 <- read.csv("train300_fin.csv", sep = ",")
+train500 <- read.csv("train500_fin.csv", sep = ",")
+```
+
+
+
+
+
+
+
+```{r pressure, echo=FALSE}
+n500 <- dim(train500)[1]
+## Vamos a generar el modelo dejando un grupo para prueba y las demas para entrenamiento
+v.error.kg500 <- rep(0,10)
+v.kap.500 <- rep(0,10)
+#Hacemos validación cruzada 10 veces para ver que el error se estabiliza
+for(i in 1:10){
+  errori500 <- 0
+  kapi500 <- 0
+  #Esta instrucción genera los k = 10 grupos (Folds)
+  grupos500 <- createFolds(1:n500, 10)
+  #Este ciclo es el que hace la validacion cruzada con 10 grupos (Folds)
+  for (k in 1:10){
+    muestra500 <- grupos500[[k]]
+    ttesting500 <- train500[muestra500,]
+    tentrenamiento500 <- train500[-muestra500,]
+    mod_500_C50 <- C5.0(SINIESTRO~.,data = tentrenamiento500, rules = TRUE)
+    pred500 <- predict(mod_500_C50, ttesting500[,-68])
+    #Matriz de Confusion
+    MC500 <- table(ttesting500[,68], pred500)
+    #Porcentaje de buena clasificación y de error
+    acierto500 <- sum(diag(MC500))/sum(MC500)
+    error500 <- 1-acierto500
+    errori500 <- errori500 + error500
+    kap500 <- round(confusionMatrix(table(pred500, ttesting500[,68]), positive="SI")$overall[2], 2) # report official Kappa
+    kapi500 <- kapi500+kap500
+  }
+  v.error.kg500[i] <- errori500/10
+  v.kap.500[i] <- kapi500/10
+}
+```
+
+
+
+
+```{r pressure, echo=FALSE}
+n500 <- dim(train500)[1]
+## Vamos a generar el modelo dejando un grupo para prueba y las demas para entrenamiento
+v.error.kg500 <- rep(0,10)
+v.kap.500 <- rep(0,10)
+#Hacemos validación cruzada 10 veces para ver que el error se estabiliza
+for(i in 1:10){
+  errori500 <- 0
+  kapi500 <- 0
+  #Esta instrucción genera los k = 10 grupos (Folds)
+  grupos500 <- createFolds(1:n500, 10)
+  #Este ciclo es el que hace la validacion cruzada con 10 grupos (Folds)
+  for (k in 1:10){
+    muestra500 <- grupos500[[k]]
+    ttesting500 <- train500[muestra500,]
+    tentrenamiento500 <- train500[-muestra500,]
+    mod_500_C50 <- C5.0(SINIESTRO~.,data = tentrenamiento500, rules = TRUE)
+    pred500 <- predict(mod_500_C50, ttesting500[,-68])
+    #Matriz de Confusion
+    MC500 <- table(ttesting500[,68], pred500)
+    #Porcentaje de buena clasificación y de error
+    acierto500 <- sum(diag(MC500))/sum(MC500)
+    error500 <- 1-acierto500
+    errori500 <- errori500 + error500
+    kap500 <- round(confusionMatrix(table(pred500, ttesting500[,68]), positive="SI")$overall[2], 2) # report official Kappa
+    kapi500 <- kapi500+kap500
+  }
+  v.error.kg500[i] <- errori500/10
+  v.kap.500[i] <- kapi500/10
+}
+```
+
+
+
+
+
+
+```{r pressure, echo=FALSE}
+n500 <- dim(train500)[1]
+## Vamos a generar el modelo dejando un grupo para prueba y las demas para entrenamiento
+v.error.kg500 <- rep(0,10)
+v.kap.500 <- rep(0,10)
+#Hacemos validación cruzada 10 veces para ver que el error se estabiliza
+for(i in 1:10){
+  errori500 <- 0
+  kapi500 <- 0
+  #Esta instrucción genera los k = 10 grupos (Folds)
+  grupos500 <- createFolds(1:n500, 10)
+  #Este ciclo es el que hace la validacion cruzada con 10 grupos (Folds)
+  for (k in 1:10){
+    muestra500 <- grupos500[[k]]
+    ttesting500 <- train500[muestra500,]
+    tentrenamiento500 <- train500[-muestra500,]
+    mod_500_C50 <- C5.0(SINIESTRO~.,data = tentrenamiento500, rules = TRUE)
+    pred500 <- predict(mod_500_C50, ttesting500[,-68])
+    #Matriz de Confusion
+    MC500 <- table(ttesting500[,68], pred500)
+    #Porcentaje de buena clasificación y de error
+    acierto500 <- sum(diag(MC500))/sum(MC500)
+    error500 <- 1-acierto500
+    errori500 <- errori500 + error500
+    kap500 <- round(confusionMatrix(table(pred500, ttesting500[,68]), positive="SI")$overall[2], 2) # report official Kappa
+    kapi500 <- kapi500+kap500
+  }
+  v.error.kg500[i] <- errori500/10
+  v.kap.500[i] <- kapi500/10
+}
+```
+
+
+
+
+
+
+
+```{r pressure, echo=FALSE}
+n500 <- dim(train500)[1]
+## Vamos a generar el modelo dejando un grupo para prueba y las demas para entrenamiento
+v.error.kg500 <- rep(0,10)
+v.kap.500 <- rep(0,10)
+#Hacemos validación cruzada 10 veces para ver que el error se estabiliza
+for(i in 1:10){
+  errori500 <- 0
+  kapi500 <- 0
+  #Esta instrucción genera los k = 10 grupos (Folds)
+  grupos500 <- createFolds(1:n500, 10)
+  #Este ciclo es el que hace la validacion cruzada con 10 grupos (Folds)
+  for (k in 1:10){
+    muestra500 <- grupos500[[k]]
+    ttesting500 <- train500[muestra500,]
+    tentrenamiento500 <- train500[-muestra500,]
+    mod_500_C50 <- C5.0(SINIESTRO~.,data = tentrenamiento500, rules = TRUE)
+    pred500 <- predict(mod_500_C50, ttesting500[,-68])
+    #Matriz de Confusion
+    MC500 <- table(ttesting500[,68], pred500)
+    #Porcentaje de buena clasificación y de error
+    acierto500 <- sum(diag(MC500))/sum(MC500)
+    error500 <- 1-acierto500
+    errori500 <- errori500 + error500
+    kap500 <- round(confusionMatrix(table(pred500, ttesting500[,68]), positive="SI")$overall[2], 2) # report official Kappa
+    kapi500 <- kapi500+kap500
+  }
+  v.error.kg500[i] <- errori500/10
+  v.kap.500[i] <- kapi500/10
+}
+```
+
+
+
+
+
+
+```{r pressure, echo=FALSE}
+n500 <- dim(train500)[1]
+## Vamos a generar el modelo dejando un grupo para prueba y las demas para entrenamiento
+v.error.kg500 <- rep(0,10)
+v.kap.500 <- rep(0,10)
+#Hacemos validación cruzada 10 veces para ver que el error se estabiliza
+for(i in 1:10){
+  errori500 <- 0
+  kapi500 <- 0
+  #Esta instrucción genera los k = 10 grupos (Folds)
+  grupos500 <- createFolds(1:n500, 10)
+  #Este ciclo es el que hace la validacion cruzada con 10 grupos (Folds)
+  for (k in 1:10){
+    muestra500 <- grupos500[[k]]
+    ttesting500 <- train500[muestra500,]
+    tentrenamiento500 <- train500[-muestra500,]
+    mod_500_C50 <- C5.0(SINIESTRO~.,data = tentrenamiento500, rules = TRUE)
+    pred500 <- predict(mod_500_C50, ttesting500[,-68])
+    #Matriz de Confusion
+    MC500 <- table(ttesting500[,68], pred500)
+    #Porcentaje de buena clasificación y de error
+    acierto500 <- sum(diag(MC500))/sum(MC500)
+    error500 <- 1-acierto500
+    errori500 <- errori500 + error500
+    kap500 <- round(confusionMatrix(table(pred500, ttesting500[,68]), positive="SI")$overall[2], 2) # report official Kappa
+    kapi500 <- kapi500+kap500
+  }
+  v.error.kg500[i] <- errori500/10
+  v.kap.500[i] <- kapi500/10
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+

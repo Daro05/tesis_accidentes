@@ -1,0 +1,116 @@
+---
+title: "C50_HEX100"
+author: "Daniel Rodriguez"
+date: "4/12/2020"
+output: html_document
+---
+
+```{r}
+rm(list=ls()) 
+setwd("~")
+options(warn=-1)
+options(repr.plot.width=10, repr.plot.height=15)
+```
+
+Cargamos la paquetería necesaria
+
+```{r}
+
+suppressWarnings(suppressMessages(library(ggplot2)))
+suppressWarnings(suppressMessages(library(tidyverse)))
+suppressWarnings(suppressMessages(library(dplyr)))
+suppressWarnings(suppressMessages(library(lattice)))
+suppressWarnings(suppressMessages(library(C50)))
+suppressWarnings(suppressMessages(library(caret)))
+suppressWarnings(suppressMessages(library(gmodels)))
+suppressWarnings(suppressMessages(library(irr)))
+suppressWarnings(suppressMessages(library(psych)))
+suppressWarnings(suppressMessages(library(kknn)))
+suppressWarnings(suppressMessages(library(randomForest)))
+suppressWarnings(suppressMessages(library(e1071)))
+suppressWarnings(suppressMessages(library(caTools)))
+suppressWarnings(suppressMessages(library(mlbench)))
+suppressWarnings(suppressMessages(library(ranger)))
+suppressWarnings(suppressMessages(library(ROCR)))
+suppressWarnings(suppressMessages(library(pROC)))
+suppressWarnings(suppressMessages(library(kknn)))
+suppressWarnings(suppressMessages(library(ada)))
+suppressWarnings(suppressMessages(library(rpart)))
+suppressWarnings(suppressMessages(library(MASS)))
+suppressWarnings(suppressMessages(library(class)))
+```
+
+Cargamos el conjunto de datos de la malla hexagonal con radio de 100 metros
+
+```{r}
+setwd("/Users/daniel.rodriguez/Documents/ACC/ACC_PROOF/ACC1/final_datasets")
+train100 <- read.csv("trainall_fin.csv", sep = ",")
+```
+
+Quitamos las columnas que no nos interesan y convertimos la variable objetivo en Factor
+
+```{r}
+train100$SINIESTRO <- factor(train100$SINIESTRO, levels = c(0,1),
+                             labels = c("NO", "SI"))
+```
+
+Primero corremos el algoritmo para ver el árbol de decisión
+
+```{r}
+set.seed(123)
+
+tree_100_C50 <- C5.0(SINIESTRO~.,data = train100, trials = 30)
+tree_100_C50
+summary(tree_100_C50)
+```
+
+Vemos la importancia de las variales predictoras y las graficamos
+
+```{r}
+importancia_usage <- C5imp(tree_100_C50, metric = "usage")
+importancia_usage <- importancia_usage %>%
+  rownames_to_column(var = "predictor")
+importancia_usage
+```
+
+Graficamos por division 
+
+```{r}
+
+importancia_splits <- C5imp(tree_100_C50, metric = "splits")
+importancia_splits <- importancia_splits %>%
+  rownames_to_column(var = "predictor")
+importancia_splits
+```
+
+Corremos el modelo para la generación de las reglas de clasificación
+
+```{r}
+
+set.seed(123)
+
+
+ctrl = C5.0Control(bands = 10)
+rules_100_C50 <- C5.0(SINIESTRO~.,data = train100, trials = 30,  rules = TRUE, control = ctrl)
+rules_100_C50
+summary(rules_100_C50)
+```
+
+Vemos la importancia de las variales predictoras y las graficamos
+
+```{r}
+importancia_usage <- C5imp(rules_100_C50, metric = "usage")
+importancia_usage <- importancia_usage %>%
+  rownames_to_column(var = "predictor")
+importancia_usage
+```
+
+Graficamos por division 
+
+```{r}
+
+importancia_splits <- C5imp(rules_100_C50, metric = "splits")
+importancia_splits <- importancia_splits %>%
+  rownames_to_column(var = "predictor")
+importancia_splits
+```

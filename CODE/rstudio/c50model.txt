@@ -1,0 +1,1792 @@
+
+Call:
+C5.0.formula(formula = SINIESTRO ~ ., data = train100, trials = 10)
+
+
+C5.0 [Release 2.07 GPL Edition]  	Tue Apr 14 14:31:14 2020
+-------------------------------
+
+Class specified by attribute `outcome'
+
+Read 94510 cases (68 attributes) from undefined.data
+
+-----  Trial 0:  -----
+
+Decision tree:
+
+interseccion <= 0:
+:...traffic_signals > 0: SI (48/8)
+:   traffic_signals <= 0:
+:   :...cruce_peligroso > 0: SI (43/9)
+:       cruce_peligroso <= 0:
+:       :...metrobus > 0: SI (57/17)
+:           metrobus <= 0:
+:           :...metro > 0: SI (56/20)
+:               metro <= 0:
+:               :...rtp > 0:
+:                   :...PER_ATRAPADO_DESBARRANCADO_100 > 1: SI (71/14)
+:                   :   PER_ATRAPADO_DESBARRANCADO_100 <= 1:
+:                   :   :...ACC_S_LESION_100 <= 30: NO (256/83)
+:                   :       ACC_S_LESION_100 > 30: SI (287/119)
+:                   rtp <= 0:
+:                   :...trolebus > 0:
+:                       :...rtp_300 <= 0: NO (28/4)
+:                       :   rtp_300 > 0:
+:                       :   :...ATROPELLADO_200 <= 13: NO (13/2)
+:                       :       ATROPELLADO_200 > 13: SI (47/13)
+:                       trolebus <= 0:
+:                       :...bar > 0:
+:                           :...nightclub_300 <= 0: NO (43/17)
+:                           :   nightclub_300 > 0: SI (11/1)
+:                           bar <= 0:
+:                           :...ATROPELLADO_100 > 52: [S1]
+:                               ATROPELLADO_100 <= 52:
+:                               :...ATROPELLADO_FATAL_200 > 5:
+:                                   :...OTROS_100 <= 0: NO (42/13)
+:                                   :   OTROS_100 > 0: SI (14/2)
+:                                   ATROPELLADO_FATAL_200 <= 5:
+:                                   :...hotel_300 <= 4: NO (46015/4769)
+:                                       hotel_300 > 4:
+:                                       :...restaurant_300 <= 26: NO (149/60)
+:                                           restaurant_300 > 26: SI (87/32)
+interseccion > 0:
+:...ACC_S_LESION_100 <= 4:
+    :...ACC_S_LESION_100 <= 0: NO (4482/313)
+    :   ACC_S_LESION_100 > 0:
+    :   :...rtp > 0: SI (90/30)
+    :       rtp <= 0:
+    :       :...ACC_S_LESION_100 <= 1:
+    :           :...ACC_C_LESION_100 <= 1: NO (1708/489)
+    :           :   ACC_C_LESION_100 > 1:
+    :           :   :...ATROPELLADO_100 > 0: SI (150/70)
+    :           :       ATROPELLADO_100 <= 0:
+    :           :       :...ACC_S_LESION_200 <= 22: NO (98/27)
+    :           :           ACC_S_LESION_200 > 22: SI (22/7)
+    :           ACC_S_LESION_100 > 1:
+    :           :...interseccion <= 2:
+    :               :...ACC_C_LESION_100 <= 1:
+    :               :   :...ATROPELLADO_100 <= 5: NO (1677/599)
+    :               :   :   ATROPELLADO_100 > 5: SI (42/15)
+    :               :   ACC_C_LESION_100 > 1:
+    :               :   :...ACC_S_LESION_100 <= 3: NO (535/245)
+    :               :       ACC_S_LESION_100 > 3: SI (277/125)
+    :               interseccion > 2:
+    :               :...ATROPELLADO_100 > 2: SI (372/129)
+    :                   ATROPELLADO_100 <= 2:
+    :                   :...ACC_C_LESION_100 > 0: SI (900/403)
+    :                       ACC_C_LESION_100 <= 0:
+    :                       :...PER_ATRAPADO_DESBARRANCADO_100 > 0: SI (37/13)
+    :                           PER_ATRAPADO_DESBARRANCADO_100 <= 0: [S2]
+    ACC_S_LESION_100 > 4:
+    :...traffic_signals > 0: SI (633/9)
+        traffic_signals <= 0:
+        :...ACC_S_LESION_100 > 17: SI (21788/3274)
+            ACC_S_LESION_100 <= 17:
+            :...rtp > 0: SI (510/54)
+                rtp <= 0:
+                :...restaurant > 0: SI (38/4)
+                    restaurant <= 0:
+                    :...interseccion > 2: SI (6369/1674)
+                        interseccion <= 2:
+                        :...ATROPELLADO_100 > 21: SI (37)
+                            ATROPELLADO_100 <= 21:
+                            :...PER_ATRAPADO_DESBARRANCADO_100 > 2: SI (38/6)
+                                PER_ATRAPADO_DESBARRANCADO_100 <= 2:
+                                :...hospital_300 > 0: SI (210/54)
+                                    hospital_300 <= 0:
+                                    :...ACC_S_LESION_100 > 8: [S3]
+                                        ACC_S_LESION_100 <= 8:
+                                        :...VEH_ATRAPADO_100 > 0: SI (61/20)
+                                            VEH_ATRAPADO_100 <= 0:
+                                            :...ACC_C_LESION_100 > 4: [S4]
+                                                ACC_C_LESION_100 <= 4:
+                                                :...OTROS_200 > 1: SI (57/19)
+                                                    OTROS_200 <= 1: [S5]
+
+SubTree [S1]
+
+PER_ATRAPADO_DESBARRANCADO_100 <= 6: NO (347/148)
+PER_ATRAPADO_DESBARRANCADO_100 > 6: SI (38/11)
+
+SubTree [S2]
+
+PER_ATRAPADO_DESBARRANCADO_200 > 0: SI (83/34)
+PER_ATRAPADO_DESBARRANCADO_200 <= 0:
+:...VOLCADURA_200 <= 2: NO (635/250)
+    VOLCADURA_200 > 2: SI (49/20)
+
+SubTree [S3]
+
+VEH_DESBARRANCADO_200 <= 0: SI (3678/1333)
+VEH_DESBARRANCADO_200 > 0:
+:...traffic_signals_300 > 0: SI (5)
+    traffic_signals_300 <= 0:
+    :...ATROPELLADO_100 <= 1: SI (14/1)
+        ATROPELLADO_100 > 1: NO (75/29)
+
+SubTree [S4]
+
+MOTOCICLISTA_100 <= 2: SI (348/136)
+MOTOCICLISTA_100 > 2: NO (27/8)
+
+SubTree [S5]
+
+ATROPELLADO_FATAL_200 > 1: NO (33/8)
+ATROPELLADO_FATAL_200 <= 1:
+:...ACC_S_LESION_100 <= 7:
+    :...PER_ATRAPADO_DESBARRANCADO_200 <= 0: NO (1199/549)
+    :   PER_ATRAPADO_DESBARRANCADO_200 > 0:
+    :   :...PER_ATRAPADO_DESBARRANCADO_100 <= 1: SI (203/87)
+    :       PER_ATRAPADO_DESBARRANCADO_100 > 1: NO (16/4)
+    ACC_S_LESION_100 > 7:
+    :...ATROPELLADO_FATAL_200 > 0: SI (40/11)
+        ATROPELLADO_FATAL_200 <= 0:
+        :...ATROPELLADO_100 > 4: SI (40/10)
+            ATROPELLADO_100 <= 4:
+            :...rtp_300 > 4: NO (75/28)
+                rtp_300 <= 4:
+                :...ACC_C_LESION_100 <= 3: SI (181/72)
+                    ACC_C_LESION_100 > 3: NO (26/8)
+
+-----  Trial 1:  -----
+
+Decision tree:
+
+ACC_S_LESION_100 <= 0: NO (20756.7/991.5)
+ACC_S_LESION_100 > 0:
+:...traffic_signals > 0: SI (567/34.4)
+    traffic_signals <= 0:
+    :...cruce_peligroso > 0: SI (286.8/22.3)
+        cruce_peligroso <= 0:
+        :...interseccion <= 0:
+            :...supermarket > 0: SI (101.2/32)
+            :   supermarket <= 0:
+            :   :...ACC_S_LESION_100 <= 24:
+            :       :...rtp <= 0: NO (15949.5/4638.5)
+            :       :   rtp > 0: SI (240.6/103.1)
+            :       ACC_S_LESION_100 > 24:
+            :       :...crossing > 0: SI (43.1/12.8)
+            :           crossing <= 0:
+            :           :...restaurant > 0: SI (333.9/126.2)
+            :               restaurant <= 0:
+            :               :...ACC_S_LESION_100 <= 54: NO (5531.1/2323.1)
+            :                   ACC_S_LESION_100 > 54:
+            :                   :...school > 0: SI (50.4/13.6)
+            :                       school <= 0:
+            :                       :...metro > 0: NO (59.2/20.8)
+            :                           metro <= 0:
+            :                           :...rtp > 0: NO (293.1/115.1)
+            :                               rtp <= 0:
+            :                               :...MOTOCICLISTA_200 > 33: SI (42.8/7.2)
+            :                                   MOTOCICLISTA_200 <= 33: [S1]
+            interseccion > 0:
+            :...metrobus > 0: SI (105.9/2)
+                metrobus <= 0:
+                :...rtp > 0: SI (2310.2/380.4)
+                    rtp <= 0:
+                    :...bar > 0: SI (89.3/12.1)
+                        bar <= 0:
+                        :...bank > 0: SI (168.1/19)
+                            bank <= 0:
+                            :...crossing > 2: SI (42.5/5.6)
+                                crossing <= 2:
+                                :...ACC_S_LESION_100 > 18:
+                                    :...interseccion > 2: SI (7743.8/1843.4)
+                                    :   interseccion <= 2: [S2]
+                                    ACC_S_LESION_100 <= 18:
+                                    :...ATROPELLADO_100 > 19: SI (90.9/15)
+                                        ATROPELLADO_100 <= 19:
+                                        :...school > 0: SI (58.3/17)
+                                            school <= 0:
+                                            :...metro_300 > 2: SI (36.1/10.5)
+                                                metro_300 <= 2: [S3]
+
+SubTree [S1]
+
+ATROPELLADO_FATAL_100 > 2: SI (199.4/66)
+ATROPELLADO_FATAL_100 <= 2:
+:...school_300 > 4: NO (120.1/45.3)
+    school_300 <= 4:
+    :...ATROPELLADO_100 > 63: SI (224.8/74.1)
+        ATROPELLADO_100 <= 63:
+        :...VOLCADURA_100 > 4: SI (1068.7/449.2)
+            VOLCADURA_100 <= 4:
+            :...rtp_300 <= 4: NO (1683.9/770.4)
+                rtp_300 > 4: SI (1791.1/820.6)
+
+SubTree [S2]
+
+VEH_DESBARRANCADO_200 > 1: NO (27.4/7.2)
+VEH_DESBARRANCADO_200 <= 1:
+:...bar_300 > 0: SI (1012/218.5)
+    bar_300 <= 0:
+    :...supermarket > 0: SI (40.9/8.1)
+        supermarket <= 0:
+        :...ACC_S_LESION_200 <= 58: NO (1878.6/875)
+            ACC_S_LESION_200 > 58: SI (7644.2/2962.4)
+
+SubTree [S3]
+
+VEH_DESBARRANCADO_200 > 1: NO (75.7/23.7)
+VEH_DESBARRANCADO_200 <= 1:
+:...PER_ATRAPADO_DESBARRANCADO_200 > 5: SI (60.1/16.6)
+    PER_ATRAPADO_DESBARRANCADO_200 <= 5:
+    :...VOLCADURA_100 > 5: NO (163.6/54.9)
+        VOLCADURA_100 <= 5:
+        :...VOLCADURA_100 > 4: SI (40.2/9.3)
+            VOLCADURA_100 <= 4:
+            :...VEH_DESBARRANCADO_100 > 0: SI (258.5/102.7)
+                VEH_DESBARRANCADO_100 <= 0:
+                :...rtp_300 > 2:
+                    :...VEH_ATRAPADO_200 > 2: SI (30.1/4)
+                    :   VEH_ATRAPADO_200 <= 2:
+                    :   :...hospital_300 > 0: SI (287.4/129.7)
+                    :       hospital_300 <= 0:
+                    :       :...MOTOCICLISTA_100 <= 0:
+                    :           :...ATROPELLADO_100 > 4: SI (828.6/388.1)
+                    :           :   ATROPELLADO_100 <= 4:
+                    :           :   :...restaurant_300 <= 0: NO (4093.5/1766.2)
+                    :           :       restaurant_300 > 0: SI (551.1/261.9)
+                    :           MOTOCICLISTA_100 > 0:
+                    :           :...ACC_PRENSADO_200 > 0: SI (194.3/83.7)
+                    :               ACC_PRENSADO_200 <= 0:
+                    :               :...ACC_S_LESION_100 <= 1: SI (103.1/37.2)
+                    :                   ACC_S_LESION_100 > 1: NO (3240.8/1523.5)
+                    rtp_300 <= 2:
+                    :...metro_300 > 0: SI (115.3/35.1)
+                        metro_300 <= 0:
+                        :...ATROPELLADO_200 > 11:
+                            :...traffic_signals_300 <= 4: SI (3571/1502.5)
+                            :   traffic_signals_300 > 4: NO (225.8/99.3)
+                            ATROPELLADO_200 <= 11:
+                            :...ACC_FATAL_200 > 1: NO (37.5/11.2)
+                                ACC_FATAL_200 <= 1:
+                                :...ACC_C_LESION_100 <= 0: SI (3348.3/1584.5)
+                                    ACC_C_LESION_100 > 0:
+                                    :...interseccion <= 2:
+                                        :...ACC_S_LESION_100 <= 7: SI (2208.7/936.9)
+                                        :   ACC_S_LESION_100 > 7: NO (1521/615.1)
+                                        interseccion > 2:
+                                        :...hospital_300 > 0: SI (29.7/8.1)
+                                            hospital_300 <= 0:
+                                            :...ACC_S_LESION_100 <= 9: NO (1997.8/807.8)
+                                                ACC_S_LESION_100 > 9: SI (936.7/388.5)
+
+-----  Trial 2:  -----
+
+Decision tree:
+
+ACC_S_LESION_100 <= 0: NO (18078.6/1233.9)
+ACC_S_LESION_100 > 0:
+:...traffic_signals > 0: SI (496.7/42.8)
+    traffic_signals <= 0:
+    :...cruce_peligroso > 0: SI (253.1/27.7)
+        cruce_peligroso <= 0:
+        :...metrobus > 0: SI (165.4/37.4)
+            metrobus <= 0:
+            :...turning_circle > 0: NO (81.3/19.6)
+                turning_circle <= 0:
+                :...rtp > 0:
+                    :...ACC_S_LESION_100 <= 7: NO (333.6/138.9)
+                    :   ACC_S_LESION_100 > 7: SI (2641.8/698)
+                    rtp <= 0:
+                    :...bank > 0: SI (300/81.3)
+                        bank <= 0:
+                        :...crossing > 2: SI (61.2/15.5)
+                            crossing <= 2:
+                            :...interseccion <= 0:
+                                :...nightclub_300 > 0: SI (346.6/144.6)
+                                :   nightclub_300 <= 0:
+                                :   :...PER_ATRAPADO_DESBARRANCADO_100 > 0:
+                                :       :...ACC_C_LESION_200 <= 3: NO (182.3/42.8)
+                                :       :   ACC_C_LESION_200 > 3:
+                                :       :   :...rtp_300 > 4: NO (1962.9/940.2)
+                                :       :       rtp_300 <= 4: [S1]
+                                :       PER_ATRAPADO_DESBARRANCADO_100 <= 0:
+                                :       :...school_300 > 10: SI (45.3/13.3)
+                                :           school_300 <= 10:
+                                :           :...ATROPELLADO_100 > 51: SI (264.7/110.7)
+                                :               ATROPELLADO_100 <= 51: [S2]
+                                interseccion > 0:
+                                :...hotel > 0: SI (69.7/12.6)
+                                    hotel <= 0:
+                                    :...supermarket > 0: SI (115.4/24)
+                                        supermarket <= 0:
+                                        :...trolebus > 0: SI (140.7/33.8)
+                                            trolebus <= 0:
+                                            :...bar_300 > 0: SI (1685.6/456.1)
+                                                bar_300 <= 0:
+                                                :...school > 0: SI (129.4/39.1)
+                                                    school <= 0:
+                                                    :...ACC_C_LESION_100 <= 0: [S3]
+                                                        ACC_C_LESION_100 > 0:
+                                                        :...interseccion > 2: [S4]
+                                                            interseccion <= 2: [S5]
+
+SubTree [S1]
+
+VEH_DESBARRANCADO_200 <= 0: SI (2535.9/1116.1)
+VEH_DESBARRANCADO_200 > 0: NO (89.3/33)
+
+SubTree [S2]
+
+ACC_S_LESION_100 <= 11: NO (9595.9/3178.5)
+ACC_S_LESION_100 > 11:
+:...VEH_DESBARRANCADO_200 > 0: SI (238.7/105.5)
+    VEH_DESBARRANCADO_200 <= 0:
+    :...ACC_FATAL_200 > 0:
+        :...ACC_S_LESION_100 <= 51: SI (1306.6/602.6)
+        :   ACC_S_LESION_100 > 51: NO (1189.8/517.9)
+        ACC_FATAL_200 <= 0:
+        :...VEH_ATRAPADO_100 > 1: SI (67.6/26.1)
+            VEH_ATRAPADO_100 <= 1:
+            :...VEH_ATRAPADO_200 > 1: NO (164.8/53.3)
+                VEH_ATRAPADO_200 <= 1:
+                :...OTROS_200 > 3: SI (50/18.7)
+                    OTROS_200 <= 3:
+                    :...VOLCADURA_200 > 28: SI (45.9/15.4)
+                        VOLCADURA_200 <= 28:
+                        :...ACC_S_LESION_100 > 57: NO (1731.4/667.7)
+                            ACC_S_LESION_100 <= 57:
+                            :...metro_300 > 2: SI (62.5/21.7)
+                                metro_300 <= 2:
+                                :...ATROPELLADO_200 > 69: SI (174.5/72.5)
+                                    ATROPELLADO_200 <= 69:
+                                    :...ATROPELLADO_FATAL_100 <= 0: NO (6346.4/2750.8)
+                                        ATROPELLADO_FATAL_100 > 0: SI (560.7/248.1)
+
+SubTree [S3]
+
+rtp_300 <= 2: NO (4500.6/1785.8)
+rtp_300 > 2: SI (2110.2/971.1)
+
+SubTree [S4]
+
+ACC_C_LESION_100 > 12: SI (3742.7/1041.6)
+ACC_C_LESION_100 <= 12:
+:...ACC_S_LESION_100 > 6: SI (8812.2/3517.7)
+    ACC_S_LESION_100 <= 6:
+    :...restaurant_300 <= 0: SI (3080.3/1514.1)
+        restaurant_300 > 0: NO (201.2/66.9)
+
+SubTree [S5]
+
+restaurant_300 > 12: SI (313.8/85.8)
+restaurant_300 <= 12:
+:...ACC_C_LESION_100 > 148: NO (61/15.7)
+    ACC_C_LESION_100 <= 148:
+    :...ATROPELLADO_200 > 119: SI (175.6/46)
+        ATROPELLADO_200 <= 119:
+        :...ACC_FATAL_200 > 4: SI (38.5/9.5)
+            ACC_FATAL_200 <= 4:
+            :...ACC_S_LESION_100 <= 1: NO (594.3/227.6)
+                ACC_S_LESION_100 > 1:
+                :...school_300 > 2: SI (649.8/267.9)
+                    school_300 <= 2:
+                    :...ATROPELLADO_FATAL_200 > 2: NO (643.5/286.5)
+                        ATROPELLADO_FATAL_200 <= 2:
+                        :...VOLCADURA_100 > 12: NO (288/113.9)
+                            VOLCADURA_100 <= 12:
+                            :...VEH_ATRAPADO_200 > 2: SI (125.1/43.9)
+                                VEH_ATRAPADO_200 <= 2:
+                                :...ACC_C_LESION_200 > 102: SI (655.6/250.9)
+                                    ACC_C_LESION_200 <= 102:
+                                    :...MOTOCICLISTA_100 > 8: NO (169.4/64.4)
+                                        MOTOCICLISTA_100 <= 8:
+                                        :...ACC_C_LESION_100 > 52: SI (126.8/37.8)
+                                            ACC_C_LESION_100 <= 52:
+                                            :...OTROS_200 > 2: NO (238.1/99.2)
+                                                OTROS_200 <= 2:
+                                                :...OTROS_100 > 1: SI (119.7/41)
+                                                    OTROS_100 <= 1: [S6]
+
+SubTree [S6]
+
+ACC_PRENSADO_100 > 0: NO (350.5/156.3)
+ACC_PRENSADO_100 <= 0:
+:...VOLCADURA_100 > 2: NO (1066.5/493.6)
+    VOLCADURA_100 <= 2:
+    :...ACC_FATAL_100 > 0: SI (511.9/214.8)
+        ACC_FATAL_100 <= 0:
+        :...restaurant_300 > 0: SI (2095.4/922.4)
+            restaurant_300 <= 0:
+            :...traffic_signals_300 > 8: NO (177.8/71.4)
+                traffic_signals_300 <= 8:
+                :...ACC_S_LESION_100 > 18:
+                    :...ACC_S_LESION_200 <= 58: SI (1564.8/567.4)
+                    :   ACC_S_LESION_200 > 58: NO (2577.7/1238.1)
+                    ACC_S_LESION_100 <= 18:
+                    :...hospital_300 > 0: NO (188.1/76.8)
+                        hospital_300 <= 0:
+                        :...rtp_300 > 2: SI (3154.1/1393.3)
+                            rtp_300 <= 2:
+                            :...school_300 > 0: NO (310.2/129.8)
+                                school_300 <= 0:
+                                :...ATROPELLADO_100 > 6: NO (527.4/215.7)
+                                    ATROPELLADO_100 <= 6:
+                                    :...metro_300 > 0: SI (33.6/7.6)
+                                        metro_300 <= 0:
+                                        :...ACC_S_LESION_100 <= 4: NO (1127.4/497.3)
+                                            ACC_S_LESION_100 > 4: SI (2664/1315)
+
+-----  Trial 3:  -----
+
+Decision tree:
+
+ACC_S_LESION_200 <= 0:
+:...ACC_C_LESION_100 <= 0: NO (10536/255.1)
+:   ACC_C_LESION_100 > 0: SI (467.2/220.8)
+ACC_S_LESION_200 > 0:
+:...traffic_signals > 0: SI (446/49.3)
+    traffic_signals <= 0:
+    :...cruce_peligroso > 0: SI (228.9/31.9)
+        cruce_peligroso <= 0:
+        :...trolebus > 0: SI (364.8/112.7)
+            trolebus <= 0:
+            :...kindergarten > 0: SI (45.9/12)
+                kindergarten <= 0:
+                :...metro > 0: SI (137.4/40.6)
+                    metro <= 0:
+                    :...rtp > 0:
+                        :...interseccion <= 0: NO (879.7/385.3)
+                        :   interseccion > 0: SI (1930.2/511.2)
+                        rtp <= 0:
+                        :...bar > 0: SI (146/46.5)
+                            bar <= 0:
+                            :...supermarket > 0: SI (223/81.4)
+                                supermarket <= 0:
+                                :...ACC_S_LESION_100 <= 18:
+                                    :...bar_300 > 8: NO (36.9/10.9)
+                                    :   bar_300 <= 8:
+                                    :   :...ACC_S_LESION_100 <= 1:
+                                    :       :...interseccion <= 0: NO (5139.7/847.3)
+                                    :       :   interseccion > 0:
+                                    :       :   :...crossing_300 > 4: NO (59.7/6.5)
+                                    :       :       crossing_300 <= 4: [S1]
+                                    :       ACC_S_LESION_100 > 1:
+                                    :       :...interseccion <= 0:
+                                    :           :...school_300 > 8: SI (37.9/10.3)
+                                    :           :   school_300 <= 8: [S2]
+                                    :           interseccion > 0: [S3]
+                                    ACC_S_LESION_100 > 18:
+                                    :...interseccion > 0:
+                                        :...restaurant_300 > 30: SI (270.4/37.7)
+                                        :   restaurant_300 <= 30: [S4]
+                                        interseccion <= 0:
+                                        :...MOTOCICLISTA_200 > 35: SI (28.5/4.5)
+                                            MOTOCICLISTA_200 <= 35: [S5]
+
+SubTree [S1]
+
+VOLCADURA_100 > 0: SI (387.2/155.4)
+VOLCADURA_100 <= 0:
+:...PER_ATRAPADO_DESBARRANCADO_100 <= 0: NO (4143.5/1509.4)
+    PER_ATRAPADO_DESBARRANCADO_100 > 0: SI (127.7/52.9)
+
+SubTree [S2]
+
+ACC_FATAL_200 > 2: SI (78.1/27.5)
+ACC_FATAL_200 <= 2:
+:...school > 0: SI (44.3/16.7)
+    school <= 0:
+    :...VOLCADURA_100 > 2: SI (651.6/302.8)
+        VOLCADURA_100 <= 2:
+        :...crossing_300 > 8: SI (154.2/63.5)
+            crossing_300 <= 8:
+            :...VOLCADURA_100 > 1: NO (343.7/126.3)
+                VOLCADURA_100 <= 1:
+                :...VEH_DESBARRANCADO_200 > 0: NO (228.2/73.3)
+                    VEH_DESBARRANCADO_200 <= 0:
+                    :...ATROPELLADO_FATAL_200 > 2: SI (109.9/46.6)
+                        ATROPELLADO_FATAL_200 <= 2:
+                        :...ACC_PRENSADO_200 > 1: NO (28.3/5.1)
+                            ACC_PRENSADO_200 <= 1:
+                            :...MOTOCICLISTA_200 <= 3: NO (7184.5/2865.2)
+                                MOTOCICLISTA_200 > 3:
+                                :...OTROS_200 > 2: NO (42.6/10.9)
+                                    OTROS_200 <= 2:
+                                    :...VOLCADURA_100 <= 0: NO (1953.4/914.3)
+                                        VOLCADURA_100 > 0: SI (421.5/189)
+
+SubTree [S3]
+
+ATROPELLADO_100 > 24: SI (28.1)
+ATROPELLADO_100 <= 24:
+:...bar_300 > 2: SI (42.5/11.7)
+    bar_300 <= 2:
+    :...ATROPELLADO_FATAL_100 > 1: NO (61.7/18.3)
+        ATROPELLADO_FATAL_100 <= 1:
+        :...ACC_PRENSADO_200 > 1: SI (124.7/43.6)
+            ACC_PRENSADO_200 <= 1:
+            :...MOTOCICLISTA_100 <= 0:
+                :...VEH_ATRAPADO_200 > 2: SI (33.3/7.9)
+                :   VEH_ATRAPADO_200 <= 2:
+                :   :...OTROS_100 > 0: SI (764/357.2)
+                :       OTROS_100 <= 0:
+                :       :...interseccion > 8: SI (85.3/32.4)
+                :           interseccion <= 8:
+                :           :...PER_ATRAPADO_DESBARRANCADO_200 > 0: NO (2458.2/1056.7)
+                :               PER_ATRAPADO_DESBARRANCADO_200 <= 0:
+                :               :...rtp_300 > 2: NO (4493.6/2007.3)
+                :                   rtp_300 <= 2:
+                :                   :...traffic_signals_300 > 6: SI (121/42.3)
+                :                       traffic_signals_300 <= 6:
+                :                       :...ACC_FATAL_100 > 0: NO (130.1/51.6)
+                :                           ACC_FATAL_100 <= 0:
+                :                           :...ATROPELLADO_100 > 4: SI (1014.3/451.8)
+                :                               ATROPELLADO_100 <= 4: [S6]
+                MOTOCICLISTA_100 > 0:
+                :...PER_ATRAPADO_DESBARRANCADO_100 > 1: SI (113.4/36.9)
+                    PER_ATRAPADO_DESBARRANCADO_100 <= 1:
+                    :...VOLCADURA_200 > 23: NO (41/9.5)
+                        VOLCADURA_200 <= 23:
+                        :...ATROPELLADO_FATAL_100 > 0: NO (383.1/164.2)
+                            ATROPELLADO_FATAL_100 <= 0:
+                            :...ATROPELLADO_FATAL_200 > 1: SI (212.6/82.3)
+                                ATROPELLADO_FATAL_200 <= 1:
+                                :...school_300 > 0: SI (903.8/398)
+                                    school_300 <= 0:
+                                    :...ACC_PRENSADO_100 > 0: SI (75.5/28.8)
+                                        ACC_PRENSADO_100 <= 0:
+                                        :...VEH_ATRAPADO_100 > 0: NO (265.7/115.6)
+                                            VEH_ATRAPADO_100 <= 0:
+                                            :...ACC_C_LESION_100 <= 0: SI (910.4/394.3)
+                                                ACC_C_LESION_100 > 0:
+                                                :...interseccion <= 2: NO (3673.6/1718)
+                                                    interseccion > 2: [S7]
+
+SubTree [S4]
+
+VEH_DESBARRANCADO_100 > 0: NO (176.3/73.5)
+VEH_DESBARRANCADO_100 <= 0:
+:...crossing > 0: SI (73.1/17.4)
+    crossing <= 0:
+    :...bank > 0: SI (101.2/23.2)
+        bank <= 0:
+        :...hotel_300 > 0: SI (1326/412.4)
+            hotel_300 <= 0:
+            :...nightclub_300 > 0: NO (100.5/48.4)
+                nightclub_300 <= 0:
+                :...school > 0: SI (62.1/14.5)
+                    school <= 0:
+                    :...ATROPELLADO_200 > 22: SI (8943.7/3399.7)
+                        ATROPELLADO_200 <= 22:
+                        :...VEH_ATRAPADO_100 > 1: SI (65.9/15.2)
+                            VEH_ATRAPADO_100 <= 1:
+                            :...rtp_300 <= 0: SI (3009.8/1225.6)
+                                rtp_300 > 0:
+                                :...MOTOCICLISTA_200 > 10: NO (254.2/106.3)
+                                    MOTOCICLISTA_200 <= 10:
+                                    :...MOTOCICLISTA_100 > 7: SI (30.1/4.4)
+                                        MOTOCICLISTA_100 <= 7:
+                                        :...MOTOCICLISTA_200 <= 0: SI (274.7/100.6)
+                                            MOTOCICLISTA_200 > 0:
+                                            :...ACC_S_LESION_200 <= 34: NO (306.3/126.6)
+                                                ACC_S_LESION_200 > 34: [S8]
+
+SubTree [S5]
+
+traffic_signals_300 > 16: NO (410.2/151.2)
+traffic_signals_300 <= 16:
+:...PER_ATRAPADO_DESBARRANCADO_100 > 3: SI (639.8/287.7)
+    PER_ATRAPADO_DESBARRANCADO_100 <= 3:
+    :...ACC_S_LESION_100 > 463: SI (31/5.1)
+        ACC_S_LESION_100 <= 463:
+        :...ACC_PRENSADO_200 > 1: NO (232/88.2)
+            ACC_PRENSADO_200 <= 1:
+            :...ATROPELLADO_FATAL_100 > 3: SI (94.5/36)
+                ATROPELLADO_FATAL_100 <= 3:
+                :...ATROPELLADO_200 <= 7: SI (1187.5/539.8)
+                    ATROPELLADO_200 > 7:
+                    :...ACC_PRENSADO_200 > 0: SI (1415.5/700.3)
+                        ACC_PRENSADO_200 <= 0:
+                        :...VEH_ATRAPADO_200 > 2: NO (112.2/37.4)
+                            VEH_ATRAPADO_200 <= 2:
+                            :...crossing_300 > 0: SI (1368.3/661.4)
+                                crossing_300 <= 0: [S9]
+
+SubTree [S6]
+
+ACC_C_LESION_100 <= 0: SI (2020.1/1001.1)
+ACC_C_LESION_100 > 0: NO (4033.2/1834.6)
+
+SubTree [S7]
+
+traffic_signals_300 > 6: SI (64.5/15.7)
+traffic_signals_300 <= 6:
+:...ATROPELLADO_100 <= 1: NO (773.5/351.1)
+    ATROPELLADO_100 > 1: SI (2183.4/1005.6)
+
+SubTree [S8]
+
+ACC_FATAL_200 > 0: NO (592.2/278.8)
+ACC_FATAL_200 <= 0:
+:...VEH_ATRAPADO_200 > 0: SI (390.1/155.6)
+    VEH_ATRAPADO_200 <= 0:
+    :...school_300 <= 2: SI (2667.2/1215.2)
+        school_300 > 2: NO (126.5/53)
+
+SubTree [S9]
+
+PER_ATRAPADO_DESBARRANCADO_200 > 10: NO (44.6/7.1)
+PER_ATRAPADO_DESBARRANCADO_200 <= 10:
+:...OTROS_200 > 3: SI (162.9/66.7)
+    OTROS_200 <= 3:
+    :...ATROPELLADO_FATAL_100 > 0: NO (1507.7/640.6)
+        ATROPELLADO_FATAL_100 <= 0:
+        :...ACC_FATAL_200 > 2: SI (89.4/31.6)
+            ACC_FATAL_200 <= 2:
+            :...restaurant_300 > 8: NO (616.7/249.4)
+                restaurant_300 <= 8:
+                :...ACC_FATAL_100 > 0: NO (508.3/210.8)
+                    ACC_FATAL_100 <= 0:
+                    :...ATROPELLADO_200 > 95: SI (114.6/37.6)
+                        ATROPELLADO_200 <= 95:
+                        :...hospital_300 > 2: SI (79.6/29.1)
+                            hospital_300 <= 2:
+                            :...school_300 > 4: NO (44.5/11.6)
+                                school_300 <= 4: [S10]
+
+SubTree [S10]
+
+PER_ATRAPADO_DESBARRANCADO_100 > 1: SI (320.6/141.9)
+PER_ATRAPADO_DESBARRANCADO_100 <= 1:
+:...metro_300 > 0: SI (545.2/257)
+    metro_300 <= 0:
+    :...bar_300 <= 2: NO (4552.2/2120.2)
+        bar_300 > 2: SI (45.1/14)
+
+-----  Trial 4:  -----
+
+Decision tree:
+
+traffic_signals > 0: SI (407.4/54.5)
+traffic_signals <= 0:
+:...nightclub_300 > 2: SI (108.5/33.1)
+    nightclub_300 <= 2:
+    :...rtp > 0: SI (2957.6/1047.9)
+        rtp <= 0:
+        :...hotel > 0: SI (141/47.4)
+            hotel <= 0:
+            :...interseccion > 0:
+                :...bar > 0: SI (69.3/19.2)
+                :   bar <= 0:
+                :   :...bank > 0: SI (132.3/30.4)
+                :       bank <= 0:
+                :       :...hotel_300 > 0: SI (1864.7/668.8)
+                :           hotel_300 <= 0:
+                :           :...ACC_C_LESION_100 <= 0:
+                :               :...ACC_FATAL_100 > 0: SI (87.7/35.1)
+                :               :   ACC_FATAL_100 <= 0:
+                :               :   :...VEH_DESBARRANCADO_100 > 0: SI (113.2/44.2)
+                :               :       VEH_DESBARRANCADO_100 <= 0:
+                :               :       :...ATROPELLADO_100 <= 0: NO (5410.5/1610.1)
+                :               :           ATROPELLADO_100 > 0:
+                :               :           :...restaurant_300 > 0: NO (346.2/150.8)
+                :               :               restaurant_300 <= 0: [S1]
+                :               ACC_C_LESION_100 > 0:
+                :               :...school > 0: SI (110.3/35.2)
+                :                   school <= 0:
+                :                   :...metro_300 > 0: SI (2646.6/1054.1)
+                :                       metro_300 <= 0:
+                :                       :...school_300 > 6: SI (67.4/16.2)
+                :                           school_300 <= 6:
+                :                           :...interseccion > 10: NO (49.9/13.4)
+                :                               interseccion <= 10:
+                :                               :...ACC_C_LESION_100 > 11: [S2]
+                :                                   ACC_C_LESION_100 <= 11: [S3]
+                interseccion <= 0:
+                :...turning_circle > 0: NO (46.7/6.4)
+                    turning_circle <= 0:
+                    :...ACC_S_LESION_100 <= 3: NO (15831.4/2170.8)
+                        ACC_S_LESION_100 > 3:
+                        :...ACC_PRENSADO_200 > 0: NO (2665/1103.6)
+                            ACC_PRENSADO_200 <= 0:
+                            :...crossing_300 > 2: NO (1779.2/768.7)
+                                crossing_300 <= 2:
+                                :...restaurant_300 > 4: NO (2181.9/972.4)
+                                    restaurant_300 <= 4:
+                                    :...hotel_300 > 2: NO (92.4/29.8)
+                                        hotel_300 <= 2: [S4]
+
+SubTree [S1]
+
+PER_ATRAPADO_DESBARRANCADO_100 > 1: SI (26.7/6.4)
+PER_ATRAPADO_DESBARRANCADO_100 <= 1:
+:...ACC_S_LESION_100 <= 1: SI (815.4/331.3)
+    ACC_S_LESION_100 > 1:
+    :...ACC_C_LESION_200 <= 3: NO (1413.8/641.6)
+        ACC_C_LESION_200 > 3: SI (1477.5/693.3)
+
+SubTree [S2]
+
+ACC_PRENSADO_100 > 2: NO (29.8/9.5)
+ACC_PRENSADO_100 <= 2:
+:...rtp_300 <= 0: SI (2969.3/1119.5)
+    rtp_300 > 0:
+    :...VEH_DESBARRANCADO_100 > 0: NO (83.7/34.1)
+        VEH_DESBARRANCADO_100 <= 0:
+        :...VOLCADURA_200 > 21: NO (439.7/199.6)
+            VOLCADURA_200 <= 21:
+            :...ACC_S_LESION_200 > 432: SI (97.5/21.1)
+                ACC_S_LESION_200 <= 432:
+                :...MOTOCICLISTA_100 <= 0: SI (556.2/215.7)
+                    MOTOCICLISTA_100 > 0:
+                    :...ACC_C_LESION_200 <= 29: NO (1024.7/485)
+                        ACC_C_LESION_200 > 29:
+                        :...interseccion > 4: SI (328.3/110.9)
+                            interseccion <= 4:
+                            :...OTROS_100 > 1: NO (191/88.7)
+                                OTROS_100 <= 1:
+                                :...crossing_300 <= 2: SI (2961.3/1297.2)
+                                    crossing_300 > 2: NO (247/104.4)
+
+SubTree [S3]
+
+ACC_PRENSADO_200 > 1: SI (112.5/42.2)
+ACC_PRENSADO_200 <= 1:
+:...MOTOCICLISTA_100 > 3: NO (762.2/360.2)
+    MOTOCICLISTA_100 <= 3:
+    :...MOTOCICLISTA_200 > 11: NO (383.5/163.7)
+        MOTOCICLISTA_200 <= 11:
+        :...traffic_signals_300 > 14: NO (160.2/65.3)
+            traffic_signals_300 <= 14:
+            :...ATROPELLADO_100 > 24: SI (56.8/15.3)
+                ATROPELLADO_100 <= 24:
+                :...hospital_300 > 0: SI (716.4/305.1)
+                    hospital_300 <= 0:
+                    :...MOTOCICLISTA_100 > 1:
+                        :...interseccion > 4: SI (406.3/152.2)
+                        :   interseccion <= 4:
+                        :   :...ATROPELLADO_FATAL_100 <= 0: SI (3179.5/1431.5)
+                        :       ATROPELLADO_FATAL_100 > 0: NO (232.4/95.9)
+                        MOTOCICLISTA_100 <= 1:
+                        :...nightclub_300 > 0: SI (42.4/13.9)
+                            nightclub_300 <= 0:
+                            :...rtp_300 <= 2:
+                                :...ACC_C_LESION_100 > 2: SI (6581.6/3093.5)
+                                :   ACC_C_LESION_100 <= 2: [S5]
+                                rtp_300 > 2:
+                                :...ACC_S_LESION_100 > 21: NO (1404.2/672.7)
+                                    ACC_S_LESION_100 <= 21:
+                                    :...ACC_S_LESION_200 > 28: [S6]
+                                        ACC_S_LESION_200 <= 28:
+                                        :...ACC_C_LESION_100 > 9: NO (68.4/21.6)
+                                            ACC_C_LESION_100 <= 9:
+                                            :...ATROPELLADO_100 <= 6: SI (2766.5/1283.1)
+                                                ATROPELLADO_100 > 6: NO (210.5/82.9)
+
+SubTree [S4]
+
+ATROPELLADO_FATAL_100 > 1: SI (533/240.2)
+ATROPELLADO_FATAL_100 <= 1:
+:...traffic_signals_300 > 2: SI (1863.9/881.3)
+    traffic_signals_300 <= 2:
+    :...rtp_300 > 22: NO (56.6/13.4)
+        rtp_300 <= 22:
+        :...metro_300 > 2: SI (144.1/60.7)
+            metro_300 <= 2:
+            :...traffic_signals_300 > 0: NO (485.7/202.4)
+                traffic_signals_300 <= 0:
+                :...hotel_300 > 0: SI (391.2/178.3)
+                    hotel_300 <= 0:
+                    :...OTROS_200 > 3: NO (88.4/31)
+                        OTROS_200 <= 3:
+                        :...ATROPELLADO_100 <= 0: NO (1504.2/647)
+                            ATROPELLADO_100 > 0:
+                            :...metro_300 > 0: NO (829.5/371.7)
+                                metro_300 <= 0:
+                                :...supermarket > 0: NO (37.3/10.7)
+                                    supermarket <= 0:
+                                    :...MOTOCICLISTA_100 > 2:
+                                        :...OTROS_200 > 2: NO (54/15.9)
+                                        :   OTROS_200 <= 2:
+                                        :   :...ATROPELLADO_200 <= 3: NO (113.6/40.6)
+                                        :       ATROPELLADO_200 > 3: [S7]
+                                        MOTOCICLISTA_100 <= 2:
+                                        :...MOTOCICLISTA_200 > 13: NO (92.1/28.1)
+                                            MOTOCICLISTA_200 <= 13: [S8]
+
+SubTree [S5]
+
+PER_ATRAPADO_DESBARRANCADO_200 > 2: NO (113.6/39.6)
+PER_ATRAPADO_DESBARRANCADO_200 <= 2:
+:...ACC_FATAL_200 > 0: NO (323.9/147.9)
+    ACC_FATAL_200 <= 0:
+    :...OTROS_200 <= 0: SI (4981/2381.6)
+        OTROS_200 > 0: NO (744/336.5)
+
+SubTree [S6]
+
+VEH_DESBARRANCADO_200 <= 0: SI (4266.2/1830.2)
+VEH_DESBARRANCADO_200 > 0: NO (126/51.6)
+
+SubTree [S7]
+
+ACC_FATAL_100 > 1: NO (54.5/19.9)
+ACC_FATAL_100 <= 1:
+:...VOLCADURA_100 <= 0: NO (886.6/433.8)
+    VOLCADURA_100 > 0: SI (1481/639.1)
+
+SubTree [S8]
+
+PER_ATRAPADO_DESBARRANCADO_200 > 3: SI (152.5/58.4)
+PER_ATRAPADO_DESBARRANCADO_200 <= 3:
+:...ACC_FATAL_200 > 1: NO (140/55.6)
+    ACC_FATAL_200 <= 1:
+    :...MOTOCICLISTA_200 > 2:
+        :...ATROPELLADO_FATAL_100 > 0: NO (288/128.4)
+        :   ATROPELLADO_FATAL_100 <= 0:
+        :   :...MOTOCICLISTA_100 <= 1: NO (1982.6/973.9)
+        :       MOTOCICLISTA_100 > 1: SI (1083.1/499.7)
+        MOTOCICLISTA_200 <= 2:
+        :...PER_ATRAPADO_DESBARRANCADO_200 > 1: NO (222.6/81.5)
+            PER_ATRAPADO_DESBARRANCADO_200 <= 1:
+            :...ATROPELLADO_FATAL_200 > 0: SI (576.9/272.2)
+                ATROPELLADO_FATAL_200 <= 0:
+                :...hospital_300 <= 0: NO (3854.2/1792.6)
+                    hospital_300 > 0: SI (184.8/80.2)
+
+-----  Trial 5:  -----
+
+Decision tree:
+
+ACC_S_LESION_100 <= 0:
+:...ATROPELLADO_FATAL_100 > 0: SI (68.6/28.2)
+:   ATROPELLADO_FATAL_100 <= 0:
+:   :...VEH_ATRAPADO_100 <= 0: NO (13513.9/1372.7)
+:       VEH_ATRAPADO_100 > 0: SI (106/37.6)
+ACC_S_LESION_100 > 0:
+:...traffic_signals > 0: SI (377.2/59.2)
+    traffic_signals <= 0:
+    :...cruce_peligroso > 0: SI (199.8/34.7)
+        cruce_peligroso <= 0:
+        :...metrobus > 0: SI (152.5/43.9)
+            metrobus <= 0:
+            :...restaurant > 0: SI (954.4/329.9)
+                restaurant <= 0:
+                :...bar > 0: SI (81.2/26.5)
+                    bar <= 0:
+                    :...hotel_300 > 4: SI (582.9/237.3)
+                        hotel_300 <= 4:
+                        :...restaurant_300 > 20: SI (777.1/327.9)
+                            restaurant_300 <= 20:
+                            :...bank > 0: SI (212.3/77.7)
+                                bank <= 0:
+                                :...ACC_S_LESION_100 <= 2:
+                                    :...ACC_FATAL_100 > 0: SI (163.2/73.7)
+                                    :   ACC_FATAL_100 <= 0:
+                                    :   :...interseccion <= 0:
+                                    :       :...crossing_300 <= 0: NO (2865.6/1125.2)
+                                    :       :   crossing_300 > 0: SI (271.3/116.2)
+                                    :       interseccion > 0:
+                                    :       :...ACC_S_LESION_200 <= 183: NO (5486.1/2509.4)
+                                    :           ACC_S_LESION_200 > 183: SI (43.5/8.2)
+                                    ACC_S_LESION_100 > 2:
+                                    :...interseccion > 2:
+                                        :...OTROS_100 > 1: SI (359.3/110.5)
+                                        :   OTROS_100 <= 1:
+                                        :   :...bar_300 > 0: SI (350.4/103.8)
+                                        :       bar_300 <= 0: [S1]
+                                        interseccion <= 2:
+                                        :...turning_circle > 0: NO (49.2/12.7)
+                                            turning_circle <= 0:
+                                            :...hotel > 0: SI (52/15.1)
+                                                hotel <= 0:
+                                                :...traffic_signals_300 > 0: [S2]
+                                                    traffic_signals_300 <= 0: [S3]
+
+SubTree [S1]
+
+VEH_DESBARRANCADO_100 > 0: NO (200.3/82.4)
+VEH_DESBARRANCADO_100 <= 0:
+:...ACC_C_LESION_100 > 12: SI (3544.8/1305.3)
+    ACC_C_LESION_100 <= 12:
+    :...school_300 > 2: SI (418.9/164.6)
+        school_300 <= 2:
+        :...hotel_300 > 0: NO (235.4/102.9)
+            hotel_300 <= 0:
+            :...PER_ATRAPADO_DESBARRANCADO_200 > 1: SI (641.2/271.1)
+                PER_ATRAPADO_DESBARRANCADO_200 <= 1:
+                :...crossing_300 > 0: SI (488.8/206.7)
+                    crossing_300 <= 0:
+                    :...metro_300 > 0: NO (325.1/136)
+                        metro_300 <= 0:
+                        :...ACC_PRENSADO_200 > 0: SI (405.9/165.8)
+                            ACC_PRENSADO_200 <= 0:
+                            :...ACC_C_LESION_200 > 20:
+                                :...VEH_ATRAPADO_100 > 0: SI (83.3/20)
+                                :   VEH_ATRAPADO_100 <= 0: [S4]
+                                ACC_C_LESION_200 <= 20:
+                                :...traffic_signals_300 > 8: SI (28.9/5.2)
+                                    traffic_signals_300 <= 8:
+                                    :...interseccion <= 4: NO (6377.3/2947.3)
+                                        interseccion > 4: [S5]
+
+SubTree [S2]
+
+PER_ATRAPADO_DESBARRANCADO_200 > 13: SI (71.1/22)
+PER_ATRAPADO_DESBARRANCADO_200 <= 13:
+:...hospital_300 > 2: NO (118.7/41.7)
+    hospital_300 <= 2:
+    :...OTROS_200 <= 1: NO (6836.9/3100.5)
+        OTROS_200 > 1: SI (1021.5/490.2)
+
+SubTree [S3]
+
+VOLCADURA_100 > 16: SI (628.5/268.7)
+VOLCADURA_100 <= 16:
+:...ACC_FATAL_100 > 2: SI (68.1/25.6)
+    ACC_FATAL_100 <= 2:
+    :...interseccion <= 0:
+        :...rtp_300 > 22: NO (92.1/24.7)
+        :   rtp_300 <= 22:
+        :   :...VOLCADURA_100 > 3: NO (2130.8/928.2)
+        :       VOLCADURA_100 <= 3:
+        :       :...ATROPELLADO_100 > 72: SI (77.3/23.6)
+        :           ATROPELLADO_100 <= 72:
+        :           :...restaurant_300 > 12: NO (152/56.6)
+        :               restaurant_300 <= 12:
+        :               :...ACC_S_LESION_100 <= 112: NO (16760.1/8067.7)
+        :                   ACC_S_LESION_100 > 112: SI (697.2/300.7)
+        interseccion > 0:
+        :...bar_300 > 2: SI (97.4/26.6)
+            bar_300 <= 2:
+            :...PER_ATRAPADO_DESBARRANCADO_100 > 3: SI (94.5/26.9)
+                PER_ATRAPADO_DESBARRANCADO_100 <= 3:
+                :...MOTOCICLISTA_100 > 3: SI (2446.8/1087.2)
+                    MOTOCICLISTA_100 <= 3:
+                    :...restaurant_300 > 12: SI (49.4/13)
+                        restaurant_300 <= 12:
+                        :...VOLCADURA_100 > 4: SI (390/161.2)
+                            VOLCADURA_100 <= 4:
+                            :...supermarket > 0: SI (27.5/8.2)
+                                supermarket <= 0:
+                                :...hotel_300 > 0: NO (448.6/202.3)
+                                    hotel_300 <= 0:
+                                    :...ATROPELLADO_100 > 9:
+                                        :...crossing_300 > 0: SI (124.3/28.2)
+                                        :   crossing_300 <= 0:
+                                        :   :...rtp_300 > 20: NO (53.9/16.8)
+                                        :       rtp_300 <= 20: [S6]
+                                        ATROPELLADO_100 <= 9:
+                                        :...OTROS_100 > 1: SI (70.8/21.6)
+                                            OTROS_100 <= 1: [S7]
+
+SubTree [S4]
+
+PER_ATRAPADO_DESBARRANCADO_200 <= 0: SI (1857.9/811.5)
+PER_ATRAPADO_DESBARRANCADO_200 > 0: NO (444.4/200.7)
+
+SubTree [S5]
+
+ATROPELLADO_FATAL_100 > 0: SI (114.5/31.1)
+ATROPELLADO_FATAL_100 <= 0:
+:...VOLCADURA_200 <= 1: SI (2280.6/1035.1)
+    VOLCADURA_200 > 1: NO (481.2/209.9)
+
+SubTree [S6]
+
+MOTOCICLISTA_200 <= 0: SI (119.1/33.6)
+MOTOCICLISTA_200 > 0:
+:...ATROPELLADO_FATAL_200 > 2: SI (119.6/40.2)
+    ATROPELLADO_FATAL_200 <= 2:
+    :...ACC_S_LESION_200 > 340: NO (41.6/9.3)
+        ACC_S_LESION_200 <= 340:
+        :...restaurant_300 <= 0: SI (1927.2/885.8)
+            restaurant_300 > 0: NO (317/133.7)
+
+SubTree [S7]
+
+ATROPELLADO_FATAL_100 > 0: NO (606.3/271.9)
+ATROPELLADO_FATAL_100 <= 0:
+:...VEH_ATRAPADO_200 > 2: SI (63.8/21.8)
+    VEH_ATRAPADO_200 <= 2:
+    :...ACC_FATAL_100 > 0: SI (371.4/168.7)
+        ACC_FATAL_100 <= 0:
+        :...MOTOCICLISTA_100 <= 0:
+            :...crossing_300 > 2: NO (196.1/73.3)
+            :   crossing_300 <= 2:
+            :   :...metro_300 > 0: SI (167.1/69.9)
+            :       metro_300 <= 0:
+            :       :...VOLCADURA_100 <= 2: NO (7073.7/3369.3)
+            :           VOLCADURA_100 > 2: SI (107.1/38.9)
+            MOTOCICLISTA_100 > 0:
+            :...metro_300 > 2: NO (31.4/7.5)
+                metro_300 <= 2:
+                :...restaurant_300 > 6: NO (73.1/24.4)
+                    restaurant_300 <= 6:
+                    :...MOTOCICLISTA_200 > 15: SI (92.2/31.8)
+                        MOTOCICLISTA_200 <= 15:
+                        :...ATROPELLADO_200 > 41: NO (201.3/65)
+                            ATROPELLADO_200 <= 41:
+                            :...ACC_C_LESION_200 > 24: SI (1379.3/608.4)
+                                ACC_C_LESION_200 <= 24:
+                                :...VEH_DESBARRANCADO_100 > 0: SI (72/26.6)
+                                    VEH_DESBARRANCADO_100 <= 0:
+                                    :...VEH_ATRAPADO_100 > 0: NO (160.1/61.8)
+                                        VEH_ATRAPADO_100 <= 0:
+                                        :...VEH_ATRAPADO_200 <= 0: NO (4119.4/2006.3)
+                                            VEH_ATRAPADO_200 > 0: SI (218.7/95.6)
+
+-----  Trial 6:  -----
+
+Decision tree:
+
+traffic_signals > 0: SI (293.8)
+traffic_signals <= 0:
+:...ACC_S_LESION_100 <= 0: NO (12101.3/783.9)
+    ACC_S_LESION_100 > 0:
+    :...turning_circle > 0: NO (75.1/23)
+        turning_circle <= 0:
+        :...rtp > 0: SI (2758.5/827.2)
+            rtp <= 0:
+            :...ACC_S_LESION_100 <= 3:
+                :...interseccion <= 0: NO (2698.6/362.6)
+                :   interseccion > 0: SI (8343/3974)
+                ACC_S_LESION_100 > 3:
+                :...supermarket > 0: SI (211.4/72.7)
+                    supermarket <= 0:
+                    :...interseccion > 2:
+                        :...bank > 0: SI (28.5)
+                        :   bank <= 0:
+                        :   :...restaurant > 0: SI (102.9/6.3)
+                        :       restaurant <= 0:
+                        :       :...ACC_C_LESION_100 > 12: SI (2709.9/515.5)
+                        :           ACC_C_LESION_100 <= 12:
+                        :           :...VEH_ATRAPADO_100 > 1: SI (37.8/7.8)
+                        :               VEH_ATRAPADO_100 <= 1:
+                        :               :...hotel_300 > 2: SI (38.7/8.5)
+                        :                   hotel_300 <= 2:
+                        :                   :...ACC_PRENSADO_100 > 0: NO (126.8/56.7)
+                        :                       ACC_PRENSADO_100 <= 0: [S1]
+                        interseccion <= 2:
+                        :...restaurant > 4: SI (50.2/11.8)
+                            restaurant <= 4:
+                            :...rtp_300 > 22: NO (291.5/123.4)
+                                rtp_300 <= 22:
+                                :...ACC_FATAL_100 > 0:
+                                    :...ATROPELLADO_200 <= 2: SI (170.5/61.7)
+                                    :   ATROPELLADO_200 > 2:
+                                    :   :...school_300 > 0: SI (481.4/218.7)
+                                    :       school_300 <= 0:
+                                    :       :...restaurant_300 > 10: SI (71.7/24)
+                                    :           restaurant_300 <= 10: [S2]
+                                    ACC_FATAL_100 <= 0:
+                                    :...interseccion <= 0:
+                                        :...MOTOCICLISTA_200 > 34: SI (40/8.3)
+                                        :   MOTOCICLISTA_200 <= 34:
+                                        :   :...restaurant_300 > 22: NO (700.5/293.3)
+                                        :       restaurant_300 <= 22: [S3]
+                                        interseccion > 0:
+                                        :...bank > 0: SI (49.1)
+                                            bank <= 0:
+                                            :...bar_300 > 0: SI (878.3/226.6)
+                                                bar_300 <= 0: [S4]
+
+SubTree [S1]
+
+ACC_C_LESION_200 > 87: SI (214.2/65.9)
+ACC_C_LESION_200 <= 87:
+:...ACC_S_LESION_100 <= 7:
+    :...bar_300 > 0: NO (36.3/8.9)
+    :   bar_300 <= 0:
+    :   :...ACC_C_LESION_200 > 55: NO (82.3/19.8)
+    :       ACC_C_LESION_200 <= 55:
+    :       :...rtp_300 > 10: NO (390.5/156.8)
+    :           rtp_300 <= 10:
+    :           :...VOLCADURA_200 <= 0: NO (1914.9/935.4)
+    :               VOLCADURA_200 > 0: SI (1518.6/692.7)
+    ACC_S_LESION_100 > 7:
+    :...bar_300 > 0: SI (148.4/49.8)
+        bar_300 <= 0:
+        :...VEH_ATRAPADO_100 > 0: SI (352.6/133.9)
+            VEH_ATRAPADO_100 <= 0:
+            :...ACC_C_LESION_100 <= 1: SI (1679.2/692.7)
+                ACC_C_LESION_100 > 1:
+                :...ATROPELLADO_200 > 17: SI (2918.9/1228.2)
+                    ATROPELLADO_200 <= 17:
+                    :...ACC_FATAL_200 > 1: NO (27.5/6.9)
+                        ACC_FATAL_200 <= 1:
+                        :...VOLCADURA_100 > 4: SI (32.5/7)
+                            VOLCADURA_100 <= 4:
+                            :...metro_300 > 0: SI (82.4/23.3)
+                                metro_300 <= 0:
+                                :...MOTOCICLISTA_200 <= 6: SI (4283.8/2006.8)
+                                    MOTOCICLISTA_200 > 6: NO (213.8/79.8)
+
+SubTree [S2]
+
+ATROPELLADO_100 > 34: NO (669.9/271.5)
+ATROPELLADO_100 <= 34:
+:...ATROPELLADO_FATAL_100 > 2: SI (99/34.8)
+    ATROPELLADO_FATAL_100 <= 2:
+    :...MOTOCICLISTA_100 <= 12: NO (2477/1173.4)
+        MOTOCICLISTA_100 > 12: SI (143.9/47.8)
+
+SubTree [S3]
+
+VEH_DESBARRANCADO_200 > 0: NO (475.9/214.2)
+VEH_DESBARRANCADO_200 <= 0:
+:...traffic_signals_300 > 0:
+    :...PER_ATRAPADO_DESBARRANCADO_200 > 13: SI (64.1/19)
+    :   PER_ATRAPADO_DESBARRANCADO_200 <= 13:
+    :   :...restaurant_300 <= 0: NO (1699.4/747.2)
+    :       restaurant_300 > 0:
+    :       :...ATROPELLADO_200 <= 4: NO (50.2/12.2)
+    :           ATROPELLADO_200 > 4:
+    :           :...restaurant <= 0: SI (2196.2/1058.2)
+    :               restaurant > 0: NO (127/51.6)
+    traffic_signals_300 <= 0:
+    :...restaurant_300 > 10: NO (479.3/216)
+        restaurant_300 <= 10:
+        :...ACC_C_LESION_100 > 17:
+            :...ATROPELLADO_100 <= 70: NO (3800.5/1860.6)
+            :   ATROPELLADO_100 > 70: SI (80.2/23.4)
+            ACC_C_LESION_100 <= 17:
+            :...ACC_S_LESION_200 > 534: SI (79.3/19)
+                ACC_S_LESION_200 <= 534:
+                :...MOTOCICLISTA_200 > 22: NO (33.9/8)
+                    MOTOCICLISTA_200 <= 22:
+                    :...MOTOCICLISTA_100 > 2: SI (1624.4/682.6)
+                        MOTOCICLISTA_100 <= 2:
+                        :...restaurant_300 > 6: SI (175.7/64.3)
+                            restaurant_300 <= 6:
+                            :...MOTOCICLISTA_100 > 1: NO (1882.2/922.8)
+                                MOTOCICLISTA_100 <= 1:
+                                :...restaurant_300 > 4: NO (114.9/48.7)
+                                    restaurant_300 <= 4:
+                                    :...restaurant_300 > 0: SI (1092.1/452.9)
+                                        restaurant_300 <= 0:
+                                        :...hospital_300 > 2: NO (60.8/23.4)
+                                            hospital_300 <= 2:
+                                            :...ACC_PRENSADO_100 > 0: NO (104.5/43.9)
+                                                ACC_PRENSADO_100 <= 0:
+                                                :...hotel_300 > 0: NO (100.4/43.9)
+                                                    hotel_300 <= 0: [S5]
+
+SubTree [S4]
+
+restaurant_300 > 12: SI (272.9/74.5)
+restaurant_300 <= 12:
+:...school > 0: SI (62.3/17)
+    school <= 0:
+    :...hotel_300 > 0: SI (803.8/333.7)
+        hotel_300 <= 0:
+        :...PER_ATRAPADO_DESBARRANCADO_200 > 9: NO (95.9/34.5)
+            PER_ATRAPADO_DESBARRANCADO_200 <= 9:
+            :...ATROPELLADO_200 > 121: SI (83.5/20.1)
+                ATROPELLADO_200 <= 121:
+                :...OTROS_200 > 2: NO (347/161.1)
+                    OTROS_200 <= 2:
+                    :...rtp_300 > 12: NO (1237.9/612)
+                        rtp_300 <= 12:
+                        :...ATROPELLADO_200 > 107: NO (57.2/17.4)
+                            ATROPELLADO_200 <= 107:
+                            :...ACC_S_LESION_200 > 481: SI (41.9/5.4)
+                                ACC_S_LESION_200 <= 481:
+                                :...ACC_S_LESION_100 > 312: NO (25.9/4.7)
+                                    ACC_S_LESION_100 <= 312:
+                                    :...ATROPELLADO_100 > 52: SI (30.8/3.9)
+                                        ATROPELLADO_100 <= 52: [S6]
+
+SubTree [S5]
+
+OTROS_100 > 0: NO (459.1/220.1)
+OTROS_100 <= 0:
+:...OTROS_200 > 0: SI (1028.1/424.6)
+    OTROS_200 <= 0:
+    :...MOTOCICLISTA_200 > 12: NO (28.2/5.8)
+        MOTOCICLISTA_200 <= 12:
+        :...MOTOCICLISTA_200 > 3: SI (1151.9/461.6)
+            MOTOCICLISTA_200 <= 3:
+            :...ACC_C_LESION_200 <= 38: SI (4735.3/2174.8)
+                ACC_C_LESION_200 > 38: NO (111.7/33.2)
+
+SubTree [S6]
+
+PER_ATRAPADO_DESBARRANCADO_200 > 1: SI (1581.4/667.8)
+PER_ATRAPADO_DESBARRANCADO_200 <= 1:
+:...VOLCADURA_100 > 1:
+    :...MOTOCICLISTA_100 > 8: SI (87.1/26.8)
+    :   MOTOCICLISTA_100 <= 8:
+    :   :...VOLCADURA_200 <= 24: SI (2101.1/1036.8)
+    :       VOLCADURA_200 > 24: NO (78.6/23.8)
+    VOLCADURA_100 <= 1:
+    :...MOTOCICLISTA_200 > 20: SI (26.1/3.2)
+        MOTOCICLISTA_200 <= 20:
+        :...school_300 > 6: SI (35.2/7.6)
+            school_300 <= 6:
+            :...ACC_FATAL_200 > 0: SI (1146.8/488.9)
+                ACC_FATAL_200 <= 0:
+                :...ACC_C_LESION_200 <= 23:
+                    :...VOLCADURA_200 > 2: SI (466.1/184)
+                    :   VOLCADURA_200 <= 2:
+                    :   :...ATROPELLADO_FATAL_100 > 0: SI (356.8/141.2)
+                    :       ATROPELLADO_FATAL_100 <= 0:
+                    :       :...ATROPELLADO_100 <= 9: SI (8485.1/3815.6)
+                    :           ATROPELLADO_100 > 9: NO (783.8/370.8)
+                    ACC_C_LESION_200 > 23:
+                    :...ACC_C_LESION_100 <= 0: NO (88.4/26.2)
+                        ACC_C_LESION_100 > 0:
+                        :...ACC_PRENSADO_100 > 0: SI (86.8/31)
+                            ACC_PRENSADO_100 <= 0:
+                            :...MOTOCICLISTA_100 <= 0: SI (1160.8/521.7)
+                                MOTOCICLISTA_100 > 0: NO (2507.9/1239.4)
+
+-----  Trial 7:  -----
+
+Decision tree:
+
+ACC_S_LESION_100 <= 0: NO (10897.3/8.1)
+ACC_S_LESION_100 > 0:
+:...traffic_signals > 0: SI (282.7)
+    traffic_signals <= 0:
+    :...cruce_peligroso > 0: SI (161.4)
+        cruce_peligroso <= 0:
+        :...interseccion <= 0:
+            :...ACC_S_LESION_100 <= 18: NO (10349.2/1523.3)
+            :   ACC_S_LESION_100 > 18:
+            :   :...crossing > 0: SI (68.4/24.9)
+            :       crossing <= 0:
+            :       :...cetram > 0: SI (36.4/12.9)
+            :           cetram <= 0:
+            :           :...metrobus > 0: SI (81.6/33.5)
+            :               metrobus <= 0:
+            :               :...ACC_S_LESION_100 <= 54: [S1]
+            :                   ACC_S_LESION_100 > 54:
+            :                   :...traffic_signals_300 > 14: NO (476/176.7)
+            :                       traffic_signals_300 <= 14:
+            :                       :...bar_300 > 18: SI (43.1/11.4)
+            :                           bar_300 <= 18:
+            :                           :...trolebus > 0: SI (97.6/39.7)
+            :                               trolebus <= 0:
+            :                               :...MOTOCICLISTA_200 <= 2: NO (440.9/166.9)
+            :                                   MOTOCICLISTA_200 > 2: [S2]
+            interseccion > 0:
+            :...metrobus > 0: SI (66.5)
+                metrobus <= 0:
+                :...bar > 0: SI (46.6)
+                    bar <= 0:
+                    :...rtp > 0: SI (1439.4/131.8)
+                        rtp <= 0:
+                        :...supermarket > 0: SI (73.2/2.7)
+                            supermarket <= 0:
+                            :...restaurant > 0: SI (303.8/22)
+                                restaurant <= 0:
+                                :...ACC_S_LESION_100 > 17:
+                                    :...interseccion > 2: SI (4829.8/576)
+                                    :   interseccion <= 2:
+                                    :   :...restaurant_300 > 12: SI (319.6/14.3)
+                                    :       restaurant_300 <= 12:
+                                    :       :...bar_300 > 0: SI (371/42.9)
+                                    :           bar_300 <= 0:
+                                    :           :...school_300 > 4: SI (133.5/16.5)
+                                    :               school_300 <= 4:
+                                    :               :...trolebus > 0: SI (41.2/6)
+                                    :                   trolebus <= 0: [S3]
+                                    ACC_S_LESION_100 <= 17:
+                                    :...school > 0: SI (49.9/11.9)
+                                        school <= 0:
+                                        :...ACC_S_LESION_100 <= 3: NO (9594.1/4185.3)
+                                            ACC_S_LESION_100 > 3:
+                                            :...ACC_PRENSADO_200 > 1: SI (71.4/23.5)
+                                                ACC_PRENSADO_200 <= 1: [S4]
+
+SubTree [S1]
+
+PER_ATRAPADO_DESBARRANCADO_100 <= 2: NO (8028.6/2706.8)
+PER_ATRAPADO_DESBARRANCADO_100 > 2: SI (378.3/165.2)
+
+SubTree [S2]
+
+ACC_S_LESION_100 > 463: SI (47/10.6)
+ACC_S_LESION_100 <= 463:
+:...ACC_C_LESION_100 <= 42:
+    :...ACC_C_LESION_100 <= 7: SI (71.8/23.7)
+    :   ACC_C_LESION_100 > 7:
+    :   :...ATROPELLADO_FATAL_200 <= 4: NO (3593.1/1593.4)
+    :       ATROPELLADO_FATAL_200 > 4: SI (81/30.5)
+    ACC_C_LESION_100 > 42:
+    :...MOTOCICLISTA_200 <= 6: SI (485.3/195.4)
+        MOTOCICLISTA_200 > 6:
+        :...school_300 <= 0: NO (1708.3/802.9)
+            school_300 > 0: SI (508.5/227.8)
+
+SubTree [S3]
+
+ACC_S_LESION_200 > 71: SI (7561.3/2630.6)
+ACC_S_LESION_200 <= 71:
+:...ACC_C_LESION_200 > 54: SI (34.1/3.4)
+    ACC_C_LESION_200 <= 54:
+    :...ACC_PRENSADO_100 > 1: NO (25.6/6.3)
+        ACC_PRENSADO_100 <= 1:
+        :...ATROPELLADO_100 > 21: SI (115.1/30.7)
+            ATROPELLADO_100 <= 21:
+            :...metro_300 > 0: NO (96.8/35.5)
+                metro_300 <= 0:
+                :...MOTOCICLISTA_100 > 5: SI (66.8/15.9)
+                    MOTOCICLISTA_100 <= 5:
+                    :...VOLCADURA_200 > 3: NO (324.7/129.9)
+                        VOLCADURA_200 <= 3:
+                        :...ACC_S_LESION_100 <= 37: SI (3054.1/1319.1)
+                            ACC_S_LESION_100 > 37: NO (376.2/160.9)
+
+SubTree [S4]
+
+restaurant_300 > 10: SI (155.7/53.5)
+restaurant_300 <= 10:
+:...interseccion > 2:
+    :...VEH_DESBARRANCADO_200 > 1: NO (43.6/14.3)
+    :   VEH_DESBARRANCADO_200 <= 1:
+    :   :...interseccion > 10: NO (30.5/8.4)
+    :       interseccion <= 10:
+    :       :...MOTOCICLISTA_200 > 13: SI (69.4/14.2)
+    :           MOTOCICLISTA_200 <= 13:
+    :           :...ATROPELLADO_100 > 6: SI (1060/362.7)
+    :               ATROPELLADO_100 <= 6:
+    :               :...school_300 > 0: SI (755.6/278.4)
+    :                   school_300 <= 0:
+    :                   :...restaurant_300 > 4: SI (44.2/11.8)
+    :                       restaurant_300 <= 4:
+    :                       :...ACC_PRENSADO_200 > 0: SI (197.3/66.8)
+    :                           ACC_PRENSADO_200 <= 0:
+    :                           :...ACC_S_LESION_100 > 10:
+    :                               :...ATROPELLADO_FATAL_100 <= 0: SI (2209.1/912.6)
+    :                               :   ATROPELLADO_FATAL_100 > 0: NO (118.4/52.6)
+    :                               ACC_S_LESION_100 <= 10:
+    :                               :...VOLCADURA_100 > 5: NO (37.8/9.8)
+    :                                   VOLCADURA_100 <= 5:
+    :                                   :...VOLCADURA_100 > 3: SI (26.8/5.1)
+    :                                       VOLCADURA_100 <= 3:
+    :                                       :...VOLCADURA_200 <= 0:
+    :                                           :...rtp_300 <= 20: SI (3006.3/1362)
+    :                                           :   rtp_300 > 20: NO (95.7/32.8)
+    :                                           VOLCADURA_200 > 0: [S5]
+    interseccion <= 2:
+    :...ATROPELLADO_100 > 21: SI (28.3)
+        ATROPELLADO_100 <= 21:
+        :...traffic_signals_300 > 18: SI (25.9/5.6)
+            traffic_signals_300 <= 18:
+            :...PER_ATRAPADO_DESBARRANCADO_100 > 2: SI (47.5/14.1)
+                PER_ATRAPADO_DESBARRANCADO_100 <= 2:
+                :...ACC_PRENSADO_200 > 0: NO (532.8/228.3)
+                    ACC_PRENSADO_200 <= 0:
+                    :...ACC_FATAL_100 > 0: SI (268.7/117.4)
+                        ACC_FATAL_100 <= 0:
+                        :...ACC_C_LESION_200 <= 16:
+                            :...ACC_C_LESION_100 > 12: NO (27.7/3.6)
+                            :   ACC_C_LESION_100 <= 12:
+                            :   :...hospital_300 > 0: SI (164.5/72.1)
+                            :       hospital_300 <= 0:
+                            :       :...traffic_signals_300 > 0: SI (428.9/196.7)
+                            :           traffic_signals_300 <= 0:
+                            :           :...OTROS_200 > 0: SI (1185.9/587)
+                            :               OTROS_200 <= 0:
+                            :               :...VOLCADURA_200 > 6: NO (46.1/14.5)
+                            :                   VOLCADURA_200 <= 6: [S6]
+                            ACC_C_LESION_200 > 16:
+                            :...VEH_ATRAPADO_100 > 0: SI (138.4/49.1)
+                                VEH_ATRAPADO_100 <= 0:
+                                :...ATROPELLADO_100 > 7: SI (363.7/135)
+                                    ATROPELLADO_100 <= 7:
+                                    :...crossing_300 > 0: NO (209.7/79.1)
+                                        crossing_300 <= 0:
+                                        :...OTROS_200 > 2: SI (46.7/12.9)
+                                            OTROS_200 <= 2:
+                                            :...metro_300 > 0: SI (138.1/48)
+                                                metro_300 <= 0: [S7]
+
+SubTree [S5]
+
+MOTOCICLISTA_200 > 7: NO (111.5/38.3)
+MOTOCICLISTA_200 <= 7:
+:...MOTOCICLISTA_100 <= 1: NO (2090.3/1010.2)
+    MOTOCICLISTA_100 > 1: SI (203.7/78)
+
+SubTree [S6]
+
+VOLCADURA_200 > 2: SI (376.5/171.1)
+VOLCADURA_200 <= 2:
+:...ATROPELLADO_100 <= 10: NO (6159.4/2802)
+    ATROPELLADO_100 > 10: SI (153.6/68.8)
+
+SubTree [S7]
+
+traffic_signals_300 > 4: NO (180.5/62.6)
+traffic_signals_300 <= 4:
+:...ACC_C_LESION_200 > 58: NO (214/75.9)
+    ACC_C_LESION_200 <= 58:
+    :...VOLCADURA_100 <= 0: SI (1700.3/789.3)
+        VOLCADURA_100 > 0: NO (507.3/224.4)
+
+-----  Trial 8:  -----
+
+Decision tree:
+
+ACC_S_LESION_100 <= 0: NO (9733.7)
+ACC_S_LESION_100 > 0:
+:...interseccion <= 0:
+    :...rtp > 0: SI (1470.4/561.2)
+    :   rtp <= 0:
+    :   :...ACC_S_LESION_100 <= 19:
+    :       :...hotel_300 <= 2: NO (8435.8/498)
+    :       :   hotel_300 > 2: SI (91.1/36.7)
+    :       ACC_S_LESION_100 > 19:
+    :       :...ACC_S_LESION_200 <= 124: NO (4943.6/1064.4)
+    :           ACC_S_LESION_200 > 124:
+    :           :...ATROPELLADO_100 > 63: SI (495.5/175.7)
+    :               ATROPELLADO_100 <= 63:
+    :               :...supermarket > 0: SI (89.3/31.4)
+    :                   supermarket <= 0:
+    :                   :...MOTOCICLISTA_100 > 12: SI (401.7/163.4)
+    :                       MOTOCICLISTA_100 <= 12:
+    :                       :...restaurant > 0: SI (423.8/183.9)
+    :                           restaurant <= 0:
+    :                           :...ATROPELLADO_FATAL_100 > 2: SI (203.1/84)
+    :                               ATROPELLADO_FATAL_100 <= 2:
+    :                               :...school > 0: SI (91.5/38.4)
+    :                                   school <= 0:
+    :                                   :...metro_300 > 2: SI (364.3/162.4)
+    :                                       metro_300 <= 2:
+    :                                       :...hotel_300 > 4: SI (323.6/148.1)
+    :                                           hotel_300 <= 4: [S1]
+    interseccion > 0:
+    :...rtp > 0: SI (1279.7/4.1)
+        rtp <= 0:
+        :...traffic_signals > 0: SI (178.4)
+            traffic_signals <= 0:
+            :...supermarket > 0: SI (65.3)
+                supermarket <= 0:
+                :...metrobus > 0: SI (59.4)
+                    metrobus <= 0:
+                    :...restaurant > 0: SI (278.5/7.9)
+                        restaurant <= 0:
+                        :...ACC_S_LESION_100 > 18: SI (13487.8/2558.6)
+                            ACC_S_LESION_100 <= 18:
+                            :...PER_ATRAPADO_DESBARRANCADO_100 > 2: SI (70.6/9.1)
+                                PER_ATRAPADO_DESBARRANCADO_100 <= 2:
+                                :...VEH_ATRAPADO_200 > 2: SI (97.7/21)
+                                    VEH_ATRAPADO_200 <= 2:
+                                    :...ATROPELLADO_100 <= 0:
+                                        :...ACC_S_LESION_100 <= 1: NO (1819.4/627.6)
+                                        :   ACC_S_LESION_100 > 1: [S2]
+                                        ATROPELLADO_100 > 0:
+                                        :...hospital_300 > 4: SI (36.5/1.8)
+                                            hospital_300 <= 4: [S3]
+
+SubTree [S1]
+
+VEH_DESBARRANCADO_100 > 0: SI (46.1/21.1)
+VEH_DESBARRANCADO_100 <= 0:
+:...ACC_PRENSADO_200 > 1: NO (85.9/12.5)
+    ACC_PRENSADO_200 <= 1:
+    :...PER_ATRAPADO_DESBARRANCADO_100 > 0:
+        :...VEH_ATRAPADO_200 <= 4: NO (2422.3/1005.6)
+        :   VEH_ATRAPADO_200 > 4: SI (30.7/9.5)
+        PER_ATRAPADO_DESBARRANCADO_100 <= 0:
+        :...bank > 0: SI (34.3/11.8)
+            bank <= 0:
+            :...rtp_300 <= 2: NO (874.6/165.4)
+                rtp_300 > 2:
+                :...VOLCADURA_200 <= 28: NO (2345.5/762.3)
+                    VOLCADURA_200 > 28: SI (106.2/39.2)
+
+SubTree [S2]
+
+VEH_DESBARRANCADO_200 > 1: NO (36.5/10)
+VEH_DESBARRANCADO_200 <= 1:
+:...PER_ATRAPADO_DESBARRANCADO_100 > 1: NO (41/12.9)
+    PER_ATRAPADO_DESBARRANCADO_100 <= 1:
+    :...OTROS_200 > 0: NO (1312.2/603.9)
+        OTROS_200 <= 0:
+        :...ACC_FATAL_200 > 1: NO (44.3/16.7)
+            ACC_FATAL_200 <= 1:
+            :...ACC_S_LESION_100 > 9: SI (888.5/296.4)
+                ACC_S_LESION_100 <= 9:
+                :...crossing_300 > 8: NO (31.5/7.1)
+                    crossing_300 <= 8:
+                    :...PER_ATRAPADO_DESBARRANCADO_200 <= 2: SI (6052.8/2626.6)
+                        PER_ATRAPADO_DESBARRANCADO_200 > 2: NO (47.2/14.1)
+
+SubTree [S3]
+
+ATROPELLADO_FATAL_100 > 1: NO (90.4/39.4)
+ATROPELLADO_FATAL_100 <= 1:
+:...MOTOCICLISTA_200 > 15: SI (145.6/31.2)
+    MOTOCICLISTA_200 <= 15:
+    :...OTROS_100 > 1: SI (99.5/24.2)
+        OTROS_100 <= 1:
+        :...interseccion > 2:
+            :...ACC_S_LESION_100 > 9: SI (3052.9/657.9)
+            :   ACC_S_LESION_100 <= 9:
+            :   :...VOLCADURA_200 > 0: SI (3638.3/1128.6)
+            :       VOLCADURA_200 <= 0:
+            :       :...VEH_ATRAPADO_200 > 1: SI (29.2/7.7)
+            :           VEH_ATRAPADO_200 <= 1:
+            :           :...interseccion > 8: SI (47.1/9.1)
+            :               interseccion <= 8:
+            :               :...hospital_300 > 0: SI (38.6/9.9)
+            :                   hospital_300 <= 0:
+            :                   :...ACC_S_LESION_100 <= 3: SI (1702.6/639)
+            :                       ACC_S_LESION_100 > 3:
+            :                       :...ATROPELLADO_100 <= 4: NO (2192/1001.6)
+            :                           ATROPELLADO_100 > 4: SI (375.6/136.5)
+            interseccion <= 2:
+            :...VEH_ATRAPADO_100 > 1: NO (30.4/9.1)
+                VEH_ATRAPADO_100 <= 1:
+                :...ATROPELLADO_FATAL_200 > 2: NO (90.3/34.1)
+                    ATROPELLADO_FATAL_200 <= 2:
+                    :...ATROPELLADO_100 > 19: SI (50.4/6.8)
+                        ATROPELLADO_100 <= 19:
+                        :...hospital_300 > 2: NO (31.7/9.8)
+                            hospital_300 <= 2:
+                            :...OTROS_200 > 0:
+                                :...ACC_C_LESION_200 <= 16: NO (1534.6/680.2)
+                                :   ACC_C_LESION_200 > 16: SI (1176.4/463.5)
+                                OTROS_200 <= 0:
+                                :...ATROPELLADO_100 > 11: NO (261/123.4)
+                                    ATROPELLADO_100 <= 11:
+                                    :...ACC_S_LESION_100 > 17: SI (351/155.9)
+                                        ACC_S_LESION_100 <= 17:
+                                        :...ACC_PRENSADO_200 > 0: SI (514.5/158)
+                                            ACC_PRENSADO_200 <= 0:
+                                            :...VOLCADURA_100 > 2: NO (253.7/109.5)
+                                                VOLCADURA_100 <= 2: [S4]
+
+SubTree [S4]
+
+VOLCADURA_200 > 2: SI (927.5/373.5)
+VOLCADURA_200 <= 2:
+:...ACC_S_LESION_100 > 6: SI (6379.2/2376.1)
+    ACC_S_LESION_100 <= 6:
+    :...ATROPELLADO_FATAL_100 > 0: NO (105.5/47.6)
+        ATROPELLADO_FATAL_100 <= 0:
+        :...ACC_C_LESION_200 <= 27: SI (4390.3/1738.2)
+            ACC_C_LESION_200 > 27: NO (125.1/45.8)
+
+-----  Trial 9:  -----
+
+Decision tree:
+
+ACC_S_LESION_100 <= 0: NO (8509.2)
+ACC_S_LESION_100 > 0:
+:...interseccion <= 0:
+    :...traffic_signals > 0: SI (68.2)
+    :   traffic_signals <= 0:
+    :   :...cruce_peligroso > 0: SI (48)
+    :       cruce_peligroso <= 0:
+    :       :...metrobus > 0: SI (116.2/25.8)
+    :           metrobus <= 0:
+    :           :...hotel > 0: SI (107.3/33.6)
+    :               hotel <= 0:
+    :               :...trolebus > 0: SI (180.8/73.5)
+    :                   trolebus <= 0:
+    :                   :...nightclub_300 > 2: SI (86.3/18)
+    :                       nightclub_300 <= 2:
+    :                       :...metro > 0: SI (93.7/32.5)
+    :                           metro <= 0:
+    :                           :...bank > 0: SI (224.1/104.8)
+    :                               bank <= 0: [S1]
+    interseccion > 0:
+    :...ACC_S_LESION_100 > 18: SI (11067.9/271.8)
+        ACC_S_LESION_100 <= 18:
+        :...rtp > 0: SI (308.8)
+            rtp <= 0:
+            :...restaurant > 0: SI (30.2)
+                restaurant <= 0:
+                :...PER_ATRAPADO_DESBARRANCADO_100 > 2: SI (57.1/3.4)
+                    PER_ATRAPADO_DESBARRANCADO_100 <= 2:
+                    :...school > 0: SI (48.1/3.3)
+                        school <= 0:
+                        :...ACC_S_LESION_100 <= 4:
+                            :...ACC_PRENSADO_200 > 1: SI (64.1/16.7)
+                            :   ACC_PRENSADO_200 <= 1:
+                            :   :...VEH_DESBARRANCADO_200 > 1: NO (34.5/2.7)
+                            :       VEH_DESBARRANCADO_200 <= 1:
+                            :       :...OTROS_200 > 1: SI (323.6/123.4)
+                            :           OTROS_200 <= 1:
+                            :           :...ACC_C_LESION_100 <= 1: NO (12589/4283.2)
+                            :               ACC_C_LESION_100 > 1:
+                            :               :...ATROPELLADO_100 > 7: SI (71.4/8.1)
+                            :                   ATROPELLADO_100 <= 7: [S2]
+                            ACC_S_LESION_100 > 4:
+                            :...bar_300 > 0: SI (267.7/24)
+                                bar_300 <= 0:
+                                :...interseccion > 2: SI (9091.4/2198.2)
+                                    interseccion <= 2:
+                                    :...MOTOCICLISTA_200 > 15: SI (64.6/7.2)
+                                        MOTOCICLISTA_200 <= 15:
+                                        :...school_300 > 2: SI (400.4/106.8)
+                                            school_300 <= 2: [S3]
+
+SubTree [S1]
+
+PER_ATRAPADO_DESBARRANCADO_200 > 18: SI (119.2/29.9)
+PER_ATRAPADO_DESBARRANCADO_200 <= 18:
+:...MOTOCICLISTA_200 <= 33: NO (19034.6/2568)
+    MOTOCICLISTA_200 > 33: SI (90.1/33.7)
+
+SubTree [S2]
+
+VEH_DESBARRANCADO_100 > 0: SI (69.1/12.7)
+VEH_DESBARRANCADO_100 <= 0:
+:...ACC_S_LESION_200 > 127: SI (56.9/8.2)
+    ACC_S_LESION_200 <= 127:
+    :...ACC_C_LESION_200 > 48: NO (72.5/10.1)
+        ACC_C_LESION_200 <= 48:
+        :...interseccion > 4: SI (374.4/127)
+            interseccion <= 4:
+            :...hotel_300 > 0: SI (38.8/11.5)
+                hotel_300 <= 0:
+                :...ACC_FATAL_200 > 0: SI (248.2/105.8)
+                    ACC_FATAL_200 <= 0:
+                    :...OTROS_100 > 0: SI (138.7/59.6)
+                        OTROS_100 <= 0:
+                        :...MOTOCICLISTA_100 > 2: SI (66.5/24)
+                            MOTOCICLISTA_100 <= 2:
+                            :...ATROPELLADO_100 <= 0: NO (1163/470.5)
+                                ATROPELLADO_100 > 0:
+                                :...ACC_C_LESION_100 <= 5: NO (2116.3/1020)
+                                    ACC_C_LESION_100 > 5: SI (155.7/51.2)
+
+SubTree [S3]
+
+traffic_signals_300 > 12: NO (152/46.9)
+traffic_signals_300 <= 12:
+:...metro_300 > 0: SI (278.2/72.9)
+    metro_300 <= 0:
+    :...OTROS_100 > 0: SI (1104.9/375.8)
+        OTROS_100 <= 0:
+        :...nightclub_300 > 0: NO (43.6/13.6)
+            nightclub_300 <= 0:
+            :...hospital_300 > 0: SI (264.5/83.2)
+                hospital_300 <= 0:
+                :...ACC_PRENSADO_200 > 1: SI (37.3/9.8)
+                    ACC_PRENSADO_200 <= 1:
+                    :...ATROPELLADO_200 > 11:
+                        :...ACC_S_LESION_200 > 265: SI (30.6/1.1)
+                        :   ACC_S_LESION_200 <= 265:
+                        :   :...ATROPELLADO_FATAL_200 > 2: NO (59.6/16.9)
+                        :       ATROPELLADO_FATAL_200 <= 2:
+                        :       :...OTROS_200 > 2: NO (45.3/12.5)
+                        :           OTROS_200 <= 2:
+                        :           :...ATROPELLADO_200 > 67: SI (29.3)
+                        :               ATROPELLADO_200 <= 67:
+                        :               :...rtp_300 <= 2: SI (2057.2/584.9)
+                        :                   rtp_300 > 2:
+                        :                   :...ACC_FATAL_100 > 0: SI (27.4/5.1)
+                        :                       ACC_FATAL_100 <= 0: [S4]
+                        ATROPELLADO_200 <= 11:
+                        :...VEH_ATRAPADO_200 > 2: SI (31.4/4.2)
+                            VEH_ATRAPADO_200 <= 2:
+                            :...OTROS_200 > 0: SI (1017.2/436.9)
+                                OTROS_200 <= 0:
+                                :...MOTOCICLISTA_100 > 4: NO (47.2/14.5)
+                                    MOTOCICLISTA_100 <= 4:
+                                    :...ATROPELLADO_FATAL_200 > 1: NO (69/15.5)
+                                        ATROPELLADO_FATAL_200 <= 1:
+                                        :...restaurant_300 > 0: SI (633.8/260.3)
+                                            restaurant_300 <= 0: [S5]
+
+SubTree [S4]
+
+ACC_S_LESION_100 <= 10: NO (1080.7/450.9)
+ACC_S_LESION_100 > 10: SI (1201.5/508)
+
+SubTree [S5]
+
+traffic_signals_300 > 6: NO (37.8/11)
+traffic_signals_300 <= 6:
+:...traffic_signals_300 > 0: SI (175.7/69.9)
+    traffic_signals_300 <= 0:
+    :...VOLCADURA_200 > 2: SI (519.8/206.7)
+        VOLCADURA_200 <= 2:
+        :...ACC_FATAL_100 > 0: NO (115/33.9)
+            ACC_FATAL_100 <= 0:
+            :...ATROPELLADO_100 <= 4: NO (6140.9/2661.1)
+                ATROPELLADO_100 > 4: SI (784.8/363)
+
+
+Evaluation on training data (94510 cases):
+
+Trial	    Decision Tree   
+-----	  ----------------  
+	  Size      Errors  
+
+   0	    60 15509(16.4%)
+   1	    56 20039(21.2%)
+   2	    68 20924(22.1%)
+   3	    97 21732(23.0%)
+   4	    82 21350(22.6%)
+   5	    79 22498(23.8%)
+   6	    92 26491(28.0%)
+   7	    81 16854(17.8%)
+   8	    65 17126(18.1%)
+   9	    62 16071(17.0%)
+boost	       15296(16.2%)   <<
+
+
+	   (a)   (b)    <-classified as
+	  ----  ----
+	 49943  7739    (a): class NO
+	  7557 29271    (b): class SI
+
+
+	Attribute usage:
+
+	100.00%	interseccion
+	100.00%	rtp
+	100.00%	traffic_signals
+	100.00%	ACC_S_LESION_100
+	100.00%	ACC_S_LESION_200
+	 99.28%	nightclub_300
+	 99.03%	bar
+	 98.73%	hotel_300
+	 97.54%	hotel
+	 97.10%	cruce_peligroso
+	 96.73%	trolebus
+	 96.38%	metro
+	 94.51%	turning_circle
+	 94.38%	metrobus
+	 87.64%	ATROPELLADO_100
+	 80.56%	ACC_C_LESION_100
+	 79.62%	kindergarten
+	 78.20%	supermarket
+	 76.97%	bank
+	 74.53%	bar_300
+	 73.34%	ATROPELLADO_FATAL_100
+	 72.48%	restaurant
+	 72.36%	restaurant_300
+	 70.81%	ATROPELLADO_FATAL_200
+	 69.15%	crossing
+	 64.15%	school_300
+	 63.30%	rtp_300
+	 61.96%	VEH_ATRAPADO_100
+	 61.79%	PER_ATRAPADO_DESBARRANCADO_200
+	 60.48%	PER_ATRAPADO_DESBARRANCADO_100
+	 60.26%	school
+	 59.96%	ACC_FATAL_100
+	 59.60%	metro_300
+	 59.09%	MOTOCICLISTA_200
+	 58.79%	VOLCADURA_100
+	 57.75%	traffic_signals_300
+	 56.13%	VEH_DESBARRANCADO_200
+	 55.39%	MOTOCICLISTA_100
+	 54.15%	crossing_300
+	 53.63%	ACC_PRENSADO_200
+	 51.33%	ACC_FATAL_200
+	 51.19%	ATROPELLADO_200
+	 50.59%	VEH_DESBARRANCADO_100
+	 45.62%	OTROS_100
+	 45.45%	OTROS_200
+	 44.19%	VEH_ATRAPADO_200
+	 43.02%	hospital_300
+	 42.01%	ACC_C_LESION_200
+	 39.71%	ACC_PRENSADO_100
+	 35.01%	VOLCADURA_200
+	 12.77%	cetram
+
+
+Time: 55.7 secs
+
